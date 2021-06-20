@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.namePrefix }}-webhost
+  namespace: {{ .Values.deploymentNamespace }}
+  labels:
+    app: {{ .Values.namePrefix }}-app
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.namePrefix }}-app
+      tier: webhost
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.namePrefix }}-app
+        tier: webhost
+    spec:
+      containers:
+        - image: {{ .Values.imageRefUri }}
+          imagePullPolicy: Always
+          name: {{ template "webHost" . }}
+          ports:
+            - containerPort: 3333
+              protocol: TCP
