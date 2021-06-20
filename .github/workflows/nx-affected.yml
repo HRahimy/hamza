@@ -21,4 +21,4 @@ jobs:
       - run: yarn install
       - name: Run Affected Tests
         shell: bash
-        run: yarn run affected:test -- --base=remotes/origin/main
+        run: yarn run affected:test -- --base=$BEFORE_SHA
