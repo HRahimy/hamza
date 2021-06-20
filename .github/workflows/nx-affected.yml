@@ -20,9 +20,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn install
-      - name: Run Affected Build
+      - name: Build API
         shell: bash
-        run: yarn run build --prod
+        run: yarn run build api --prod
+      - name: Build Site
+        shell: bash
+        run: yarn run build site --prod
       - name: Create build artifacts
         uses: actions/upload-artifact@v2
         with:
