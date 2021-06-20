@@ -5,6 +5,7 @@ import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatLineModule} from "@angular/material/core";
+import {SiteUiContentModule} from "@hamza/site-ui/content";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {MatLineModule} from "@angular/material/core";
     SiteUiSharedUiModule,
     MatTabsModule,
     MatDividerModule,
-    MatLineModule
+    MatLineModule,
+    SiteUiContentModule,
   ],
   declarations: [
     AppScaffoldComponent

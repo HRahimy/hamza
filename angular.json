@@ -185,6 +185,31 @@
         }
       }
     },
+    "site-ui-content": {
+      "projectType": "library",
+      "root": "libs/site-ui/content",
+      "sourceRoot": "libs/site-ui/content/src",
+      "prefix": "hamza",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/content"],
+          "options": {
+            "jestConfig": "libs/site-ui/content/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/site-ui/content/src/**/*.ts",
+              "libs/site-ui/content/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "site-ui-layout": {
       "projectType": "library",
       "root": "libs/site-ui/layout",

@@ -32,6 +32,9 @@
       "tags": [],
       "implicitDependencies": ["site"]
     },
+    "site-ui-content": {
+      "tags": []
+    },
     "site-ui-layout": {
       "tags": []
     },
