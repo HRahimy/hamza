@@ -12,6 +12,14 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
+  /*
+  Needed to set CORS origin to avoid errors when testing with swagger UI
+  Reference: https://stackoverflow.com/a/58836459/5472560
+   */
+  app.enableCors({
+    origin: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS'
+  });
   const port = process.env.PORT || 3333;
   await app.listen(port, () => {
     Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
