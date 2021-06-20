@@ -80,7 +80,10 @@
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.app.json",
             "assets": ["apps/site/src/favicon.ico", "apps/site/src/assets"],
-            "styles": ["apps/site/src/custom-theme.scss", "apps/site/src/styles.css"],
+            "styles": [
+              "apps/site/src/custom-theme.scss",
+              "apps/site/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -178,6 +181,56 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "site-ui-layout": {
+      "projectType": "library",
+      "root": "libs/site-ui/layout",
+      "sourceRoot": "libs/site-ui/layout/src",
+      "prefix": "hamza",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/layout"],
+          "options": {
+            "jestConfig": "libs/site-ui/layout/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/site-ui/layout/src/**/*.ts",
+              "libs/site-ui/layout/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "site-ui-shared-ui": {
+      "projectType": "library",
+      "root": "libs/site-ui/shared/ui",
+      "sourceRoot": "libs/site-ui/shared/ui/src",
+      "prefix": "hamza",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/shared/ui"],
+          "options": {
+            "jestConfig": "libs/site-ui/shared/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/site-ui/shared/ui/src/**/*.ts",
+              "libs/site-ui/shared/ui/src/**/*.html"
+            ]
           }
         }
       }

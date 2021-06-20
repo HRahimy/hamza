@@ -31,6 +31,12 @@
     "site-e2e": {
       "tags": [],
       "implicitDependencies": ["site"]
+    },
+    "site-ui-layout": {
+      "tags": []
+    },
+    "site-ui-shared-ui": {
+      "tags": []
     }
   }
 }

@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hamza/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@hamza/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@hamza/site-ui/layout": ["libs/site-ui/layout/src/index.ts"],
+      "@hamza/site-ui/shared/ui": ["libs/site-ui/shared/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
