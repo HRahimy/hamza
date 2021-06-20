@@ -40,6 +40,9 @@ jobs:
         with:
           name: built-app
           path: dist
+      - name: test
+        run: ls
+        working-directory: dist
       - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
         with:
           gcloud_service_key: ${{ secrets.GCR_SERVICE_KEY }}
