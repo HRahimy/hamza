@@ -1,7 +1,7 @@
 name: NX Affected CI
 
 on:
-  pull_request:
+  push:
     branches: [master]
 
 jobs:
@@ -21,4 +21,4 @@ jobs:
       - run: yarn install
       - name: Run Affected Tests
         shell: bash
-        run: yarn run affected:test -- --base=$BEFORE_SHA
+        run: yarn run affected:build --prod
