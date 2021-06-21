@@ -15,4 +15,4 @@ spec:
   selector:
     app: {{ .Values.namePrefix }}-app
     tier: webhost
-  type: LoadBalancer
+  type: NodePort
