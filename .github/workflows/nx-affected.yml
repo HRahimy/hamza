@@ -102,8 +102,8 @@ jobs:
 #      - name: Prep helm chart
 #        run: echo ${{ secrets.SITE_CHART_VALUES }} | base64 -d > ./charts/site/values.yaml
 
-      - name: Deploy
-        uses: WyriHaximus/github-action-helm3@v2
-        working-directory: ./charts/site
+      - uses: WyriHaximus/github-action-helm3@v2
+        name: Deploy
+#        working-directory: ./charts/site
         with:
-          exec: helm upgrade ${{ env.DEPLOYMENT_NAME }} . --install --wait --atomic --set="namePrefix=$DEPLOYMENT_NAME" --set="imageRefUri=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" --set=deploymentNamespace=default --set="webHost=$WEB_HOST"
+          exec: helm upgrade ${{ env.DEPLOYMENT_NAME }} ./charts/site/ --install --wait --atomic --set="namePrefix=$DEPLOYMENT_NAME" --set="imageRefUri=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" --set=deploymentNamespace=default --set="webHost=$WEB_HOST"
