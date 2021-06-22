@@ -9,6 +9,39 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+$my-blue: (
+  50: rgb(51, 103, 214),
+  100: rgb(51, 103, 214),
+  200: rgb(51, 103, 214),
+  300: rgb(51, 103, 214),
+  400: rgb(51, 103, 214),
+  500: rgb(51, 103, 214),
+  600: rgb(51, 103, 214),
+  700: rgb(51, 103, 214),
+  800: rgb(51, 103, 214),
+  900: rgb(51, 103, 214),
+  A100: rgb(51, 103, 214),
+  A200: rgb(51, 103, 214),
+  A400: rgb(51, 103, 214),
+  A700: rgb(51, 103, 214),
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
