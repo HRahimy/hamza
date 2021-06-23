@@ -35,6 +35,12 @@ export class SkillsComponent {
       description: 'A cross-platform mobile-app development framework'
     },
     {
+      iconAsset: 'devicon-dotnetcore-plain colored',
+      assetType: 'icon',
+      title: 'ASP.NET Core',
+      description: 'A framework for developing cross-platform backend & frontend applications'
+    },
+    {
       iconAsset: 'devicon-postgresql-plain colored',
       assetType: 'icon',
       title: 'PostgreSQL',
@@ -105,18 +111,6 @@ export class SkillsComponent {
       assetType: 'icon',
       title: 'C#',
       description: 'Programming Language'
-    },
-    {
-      iconAsset: 'devicon-c-plain colored',
-      assetType: 'icon',
-      title: 'C',
-      description: 'Programming Language'
-    },
-    {
-      iconAsset: 'devicon-cplusplus-plain colored',
-      assetType: 'icon',
-      title: 'C++',
-      description: 'Programming Language'
-    },
+    }
   ];
 }
