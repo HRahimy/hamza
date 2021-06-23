@@ -43,21 +43,25 @@ $my-white: (
   )
 );
 
+$blue-light: rgb(139, 246, 255);
+$blue-normal: rgb(79, 195, 247);
+$blue-dark: rgb(0, 147, 196);
+
 $my-blue: (
-  50: rgb(139, 246, 255),
-  100: rgb(139, 246, 255),
-  200: rgb(139, 246, 255),
-  300: rgb(139, 246, 255),
-  400: rgb(139, 246, 255),
-  500: rgb(79, 195, 247),
-  600: rgb(79, 195, 247),
-  700: rgb(0, 147, 196),
-  800: rgb(0, 147, 196),
-  900: rgb(0, 147, 196),
-  A100: rgb(139, 246, 255),
-  A200: rgb(139, 246, 255),
-  A400: rgb(139, 246, 255),
-  A700: rgb(79, 195, 247),
+  //50: $blue-light,
+  //100: $blue-light,
+  //200: rgb(139, 246, 255),
+  //300: rgb(139, 246, 255),
+  //400: rgb(139, 246, 255),
+  //500: rgb(79, 195, 247),
+  //600: rgb(79, 195, 247),
+  //700: rgb(0, 147, 196),
+  //800: rgb(0, 147, 196),
+  //900: rgb(0, 147, 196),
+  A100: $blue-light,
+  A200: $blue-normal,
+  A400: $blue-dark,
+  A700: $blue-dark,
   contrast: (
     50: white,
     100: white,
@@ -69,18 +73,18 @@ $my-blue: (
     700: white,
     800: white,
     900: white,
-    A100: white,
-    A200: white,
-    A400: white,
-    A700: white,
+    A100: black,
+    A200: black,
+    A400: black,
+    A700: black,
   )
 );
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$site-primary: mat.define-palette($my-blue);
-$site-accent: mat.define-palette($my-white, A200, A100, A400);
+$site-primary: mat.define-palette($my-white);
+$site-accent: mat.define-palette($my-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $site-warn: mat.define-palette(mat.$red-palette);
