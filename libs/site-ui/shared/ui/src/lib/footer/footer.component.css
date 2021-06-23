@@ -1,7 +1,5 @@
-.container {
-  height: 50px;
-}
-
-.centerspan {
+.column {
   margin: auto;
+  justify-content: space-evenly;
+  width: 50%;
 }

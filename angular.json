@@ -83,7 +83,8 @@
             "assets": ["apps/site/src/favicon.ico", "apps/site/src/assets"],
             "styles": [
               "apps/site/src/custom-theme.scss",
-              "apps/site/src/styles.css"
+              "apps/site/src/styles.css",
+              "node_modules/devicon/devicon.min.css"
             ],
             "scripts": []
           },

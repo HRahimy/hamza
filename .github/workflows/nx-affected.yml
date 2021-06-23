@@ -8,9 +8,9 @@ env:
   PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
   GKE_CLUSTER: cost-optimized-cluster-1    # Add your cluster name here.
   GKE_ZONE: us-central1-c   # Add your cluster zone here.
-  DEPLOYMENT_NAME: hamzasite-host # Add your deployment name here.
+  DEPLOYMENT_NAME: hamzasite # Add your deployment name here.
   IMAGE: hamzasite
-  WEB_HOST: site.hrahimy.com
+  SITE_PUBLIC_HOST: test.site.hrahimy.com
 
 jobs:
   build:
@@ -22,42 +22,33 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install dependencies
         run: yarn install
+
       - name: Build API
         shell: bash
         run: yarn run build api --prod
+
       - name: Build Site
         shell: bash
         run: yarn run build site --prod
+
       - name: Create build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: built-app
           path: dist
-#  docker:
-#    needs: [build]
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/download-artifact@v2
-#        with:
-#          name: built-app
-#          path: dist
-#      - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
-#        with:
-#          gcloud_service_key: ${{ secrets.GCR_SERVICE_KEY }}
-#          registry: gcr.io
-#          project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
-#          image_name: hamza-site
 
-  setup-build-publish-deploy:
+  publish-deploy:
     needs: [build]
-    name: Setup, Build, Publish, and Deploy
+    name: Publish docker image. Deploy.
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
 
@@ -104,6 +95,11 @@ jobs:
 
       - uses: WyriHaximus/github-action-helm3@v2
         name: Deploy
-#        working-directory: ./charts/site
         with:
-          exec: helm upgrade ${{ env.DEPLOYMENT_NAME }} ./charts/site/ --install --wait --atomic --set="namePrefix=$DEPLOYMENT_NAME" --set="imageRefUri=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" --set=deploymentNamespace=default --set="webHost=$WEB_HOST"
+          exec: |-
+            helm upgrade ${{ env.DEPLOYMENT_NAME }} ./charts/site/ \
+            --install --wait --atomic \
+            --set="namePrefix=$DEPLOYMENT_NAME" \
+            --set="imageRefUri=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
+            --set=deploymentNamespace=dev \
+            --set="webHost=$SITE_PUBLIC_HOST" \
