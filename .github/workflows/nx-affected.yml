@@ -99,6 +99,7 @@ jobs:
           exec: |-
             helm upgrade ${{ env.DEPLOYMENT_NAME }} ./charts/site/ \
             --install --wait --atomic \
+            --namespace=dev \
             --set="namePrefix=$DEPLOYMENT_NAME" \
             --set="imageRefUri=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
             --set=deploymentNamespace=dev \
