@@ -1,8 +1,11 @@
 <div class="flex">
   <mat-divider></mat-divider>
   <div class="header">
-    <h2 mat-line>Skills & Works</h2>
+    <mat-toolbar color="primary">
+      <span>Skills & Works</span>
+    </mat-toolbar>
   </div>
+  <mat-divider></mat-divider>
   <mat-list class="content">
     <mat-list-item *ngFor="let skill of skills">
       <i *ngIf="skill.assetType === 'icon'" mat-list-icon [class]="skill.iconAsset"></i>
