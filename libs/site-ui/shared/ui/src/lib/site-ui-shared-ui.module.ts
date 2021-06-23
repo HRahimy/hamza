@@ -5,13 +5,17 @@ import {MatLineModule} from "@angular/material/core";
 import {FooterComponent} from './footer/footer.component';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   imports: [
     CommonModule,
     MatLineModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [
     SummaryComponent,
