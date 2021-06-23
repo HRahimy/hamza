@@ -2,3 +2,30 @@
   width: 50%;
   margin: auto;
 }
+
+.flex {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.header {
+  flex-shrink: 0;
+  flex-grow: 0;
+  font-weight: bold;
+}
+
+.content {
+  flex-shrink: 1;
+  flex-grow: 1;
+  position: relative;
+  overflow-y: auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
