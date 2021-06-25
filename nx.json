@@ -38,6 +38,9 @@
     "site-ui-layout": {
       "tags": []
     },
+    "site-ui-shared-models": {
+      "tags": []
+    },
     "site-ui-shared-ui": {
       "tags": []
     }

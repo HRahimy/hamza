@@ -6,6 +6,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatLineModule} from "@angular/material/core";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatIconModule,
     MatDividerModule,
     MatLineModule,
-    MatToolbarModule
+    MatToolbarModule,
+    SiteUiSharedUiModule
   ],
   declarations: [
     SkillsComponent

@@ -237,6 +237,27 @@
         }
       }
     },
+    "site-ui-shared-models": {
+      "root": "libs/site-ui/shared/models",
+      "sourceRoot": "libs/site-ui/shared/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/site-ui/shared/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/shared/models"],
+          "options": {
+            "jestConfig": "libs/site-ui/shared/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "site-ui-shared-ui": {
       "projectType": "library",
       "root": "libs/site-ui/shared/ui",

@@ -7,6 +7,8 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { HeaderedListComponent } from './headered-list/headered-list.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   imports: [
@@ -15,15 +17,18 @@ import {MatIconModule} from "@angular/material/icon";
     MatDividerModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
   ],
   declarations: [
     SummaryComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderedListComponent
   ],
   exports: [
     SummaryComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderedListComponent
   ]
 })
 export class SiteUiSharedUiModule {
