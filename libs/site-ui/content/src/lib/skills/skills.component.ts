@@ -35,7 +35,7 @@ export class SkillsComponent {
       iconAsset: 'devicon-dotnetcore-plain colored',
       assetType: 'icon',
       title: 'ASP.NET Core',
-      description: 'A framework for cross-platform backend & frontend applications',
+      description: 'For building cross-platform backend & frontend applications',
       skillType: 'backend'
     },
     {
@@ -91,7 +91,7 @@ export class SkillsComponent {
       iconAsset: 'devicon-gitlab-plain colored',
       assetType: 'icon',
       title: 'GitLab',
-      description: 'All-in-one SCM, Project Management, CI/CD, and DevOps needs',
+      description: 'All-in-one SCM, Project Management, and CI/CD',
       skillType: 'systems'
     },
     {
