@@ -1,15 +1,11 @@
-<div class="flex">
-  <div class="header">
+<div>
     <mat-toolbar color="primary">
       <span>{{title}}</span>
     </mat-toolbar>
 
-
-  </div>
-
   <mat-divider></mat-divider>
 
-  <mat-list >
+  <mat-list dense>
     <mat-list-item *ngFor="let skill of skills">
       <i *ngIf="skill.assetType === 'icon'" mat-list-icon [class]="skill.iconAsset"></i>
       <img mat-list-icon *ngIf="skill.assetType === 'image'" alt="image" [src]="skill.iconAsset">

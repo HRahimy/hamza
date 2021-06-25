@@ -22,11 +22,13 @@
   overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .content>* {
   margin-top: 20px;
+  margin-inline: 20px;
+  width: 400px;
 }
 
 .footer {
