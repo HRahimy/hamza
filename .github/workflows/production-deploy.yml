@@ -48,3 +48,10 @@ jobs:
             --set="imageRefUri=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" \
             --set=deploymentNamespace=hamzasite-production \
             --set="webHost=$SITE_PUBLIC_HOST" \
+            --set="sqlDb.name=$SQLDB_NAME" \
+            --set="sqlDb.user=$SQLDB_USER" \
+            --set="sqlDb.password=$SQLDB_PASSWORD" \
+        env:
+          SQLDB_NAME: ${{ secrets.SQLDB_NAME }}
+          SQLDB_USER: ${{ secrets.SQLDB_USER }}
+          SQLDB_PASSWORD: ${{ secrets.SQLDB_PASSWORD }}
