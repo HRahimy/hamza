@@ -25,3 +25,23 @@ spec:
           ports:
             - containerPort: 3333
               protocol: TCP
+          env:
+            - name: DB_HOST
+              value: {{ template "dbHost" . }}
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-webhost-secrets
+                  key: dbName
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-webhost-secrets
+                  key: dbUser
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-webhost-secrets
+                  key: dbPassword

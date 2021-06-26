@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.namePrefix }}-psql
+  labels:
+    app: {{ .Values.namePrefix }}-app
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.namePrefix }}-app
+      tier: psql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.namePrefix }}-app
+        tier: psql
+    spec:
+      containers:
+        - name: {{ .Values.namePrefix }}-psql
+          image: postgres:latest
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-psql-secrets
+                  key: dbName
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-psql-secrets
+                  key: dbPassword
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-psql-secrets
+                  key: dbUser
+          ports:
+            - containerPort: 5432
+              name: psql
+      volumes:
+        - name: {{ .Values.namePrefix }}-psql-persistent-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.namePrefix }}-psql-pv-claim

@@ -237,6 +237,48 @@
         }
       }
     },
+    "site-ui-shared-models": {
+      "root": "libs/site-ui/shared/models",
+      "sourceRoot": "libs/site-ui/shared/models/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/site-ui/shared/models/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/shared/models"],
+          "options": {
+            "jestConfig": "libs/site-ui/shared/models/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "site-ui-shared-state": {
+      "root": "libs/site-ui/shared/state",
+      "sourceRoot": "libs/site-ui/shared/state/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/site-ui/shared/state/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/shared/state"],
+          "options": {
+            "jestConfig": "libs/site-ui/shared/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "site-ui-shared-ui": {
       "projectType": "library",
       "root": "libs/site-ui/shared/ui",
@@ -258,6 +300,27 @@
               "libs/site-ui/shared/ui/src/**/*.ts",
               "libs/site-ui/shared/ui/src/**/*.html"
             ]
+          }
+        }
+      }
+    },
+    "typeorm-column-transformers": {
+      "root": "libs/typeorm-column-transformers",
+      "sourceRoot": "libs/typeorm-column-transformers/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/typeorm-column-transformers/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/typeorm-column-transformers"],
+          "options": {
+            "jestConfig": "libs/typeorm-column-transformers/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
