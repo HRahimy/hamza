@@ -1717,6 +1717,20 @@
   dependencies:
     enhanced-resolve "5.7.0"
 
+"@ngxs/form-plugin@^3.7.2":
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/form-plugin/-/form-plugin-3.7.2.tgz#c9dc94f46f80f3c9f6f5e97e9070bea7535906fb"
+  integrity sha512-oUv/XXrFCFmyBLV8q4D1kAYdXa4Kc7fyhBhB1/SxLz278G/dzTUY61UZk4RMjhRhosZF0ncG//IB/Kevs/J8KA==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/logger-plugin@^3.7.2":
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/logger-plugin/-/logger-plugin-3.7.2.tgz#32dc7b0c1feddc41dab159f015bc73381cc249c6"
+  integrity sha512-JGqgBUX+r/1uV0IkHMJtGyAFDrbjbUZWgmmlXCaJ4t1r+cY/TPJm5BeLtiIqdewf2ELfzOfA682mbk3EOlRymw==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngxs/store@^3.7.2":
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.7.2.tgz#1088b0669adc382d36ca7ae8438c603e55879b42"
@@ -6343,6 +6357,11 @@ image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
   integrity sha1-Cd/Uq50g4p6xw+gLiZA3jfnjy5w=
+
+immer@^9.0.3:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-9.0.3.tgz#146e2ba8b84d4b1b15378143c2345559915097f4"
+  integrity sha512-mONgeNSMuyjIe0lkQPa9YhdmTv8P19IeHV0biYhcXhbd5dhdB9HSK93zBpyKjp6wersSUgT5QyU0skmejUVP2A==
 
 import-fresh@^3.0.0, import-fresh@^3.2.1:
   version "3.3.0"

@@ -13,6 +13,8 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "strictNullChecks": false,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
       "@hamza/api-interfaces": ["libs/api-interfaces/src/index.ts"],
@@ -21,6 +23,7 @@
       "@hamza/site-ui/shared/models": [
         "libs/site-ui/shared/models/src/index.ts"
       ],
+      "@hamza/site-ui/shared/state": ["libs/site-ui/shared/state/src/index.ts"],
       "@hamza/site-ui/shared/ui": ["libs/site-ui/shared/ui/src/index.ts"],
       "@hamza/typeorm-column-transformers": [
         "libs/typeorm-column-transformers/src/index.ts"
