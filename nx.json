@@ -43,6 +43,9 @@
     },
     "site-ui-shared-ui": {
       "tags": []
+    },
+    "typeorm-column-transformers": {
+      "tags": []
     }
   }
 }

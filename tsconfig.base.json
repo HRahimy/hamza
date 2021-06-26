@@ -21,7 +21,10 @@
       "@hamza/site-ui/shared/models": [
         "libs/site-ui/shared/models/src/index.ts"
       ],
-      "@hamza/site-ui/shared/ui": ["libs/site-ui/shared/ui/src/index.ts"]
+      "@hamza/site-ui/shared/ui": ["libs/site-ui/shared/ui/src/index.ts"],
+      "@hamza/typeorm-column-transformers": [
+        "libs/typeorm-column-transformers/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
