@@ -57,6 +57,20 @@ export class SkillsState {
     return state.skills.filter(value => value.skillType === 'systems');
   }
 
+  @Selector()
+  static selectedSkill(state: SkillsStateModel): Skill | undefined {
+    if (state.systemsSelectedSkill !== undefined) {
+      return state.systemsSelectedSkill;
+    }
+    if (state.frontendSelectedSkill !== undefined) {
+      return state.frontendSelectedSkill;
+    }
+    if (state.backendSelectedSkill !== undefined) {
+      return state.backendSelectedSkill;
+    }
+    return undefined;
+  }
+
   @Action(SelectFrontendSkill)
   selectFrontendSkill(ctx: StateContext<SkillsStateModel>, action: SelectFrontendSkill) {
     const currentState = ctx.getState();

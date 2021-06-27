@@ -1,4 +1,7 @@
 <div class="flex">
+  <div class="header">
+    <span mat-line >And here's what I can do for you</span>
+  </div>
   <div class="row" mat-line>
     <h3>Frontend</h3>
     <div class="span">
@@ -34,5 +37,28 @@
       </div>
     </div>
   </div>
-  <mat-divider inset></mat-divider>
+  <mat-divider></mat-divider>
+
+  <mat-toolbar
+    *ngIf="(selectedSkill$ | async) === undefined"
+    color="primary">
+    <mat-toolbar-row class="warning-column" mat-line>
+      <mat-icon color="accent">warning</mat-icon>
+      Select a skill to learn more
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
+    <mat-list-item>
+      <i *ngIf="(selectedSkill$ | async)?.assetType === 'icon'" mat-list-icon
+         [class]="(selectedSkill$ | async)?.iconAsset"></i>
+      <img mat-list-icon *ngIf="(selectedSkill$ | async)?.assetType === 'image'" alt="image"
+           [src]="(selectedSkill$ | async)?.iconAsset">
+      <h3 mat-line>{{(selectedSkill$ | async)?.title}}</h3>
+      <p mat-line>{{(selectedSkill$ | async)?.description}}</p>
+      <mat-divider ></mat-divider>
+
+    </mat-list-item>
+  </mat-list>
+
 </div>
