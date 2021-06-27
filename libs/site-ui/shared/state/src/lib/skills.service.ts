@@ -64,6 +64,8 @@ export class SkillsState {
     if (currentState.frontendSelectedSkill === undefined) {
       ctx.setState(produce(draft => {
         draft.frontendSelectedSkill = action.skill;
+        draft.backendSelectedSkill = undefined;
+        draft.systemsSelectedSkill = undefined;
       }));
       return;
     }
@@ -76,6 +78,8 @@ export class SkillsState {
 
     ctx.setState(produce(draft => {
       draft.frontendSelectedSkill = action.skill;
+      draft.backendSelectedSkill = undefined;
+      draft.systemsSelectedSkill = undefined;
     }));
   }
 
@@ -86,6 +90,8 @@ export class SkillsState {
     if (currentState.backendSelectedSkill === undefined) {
       ctx.setState(produce(draft => {
         draft.backendSelectedSkill = action.skill;
+        draft.frontendSelectedSkill = undefined;
+        draft.systemsSelectedSkill = undefined;
       }));
       return;
     }
@@ -98,6 +104,8 @@ export class SkillsState {
 
     ctx.setState(produce(draft => {
       draft.backendSelectedSkill = action.skill;
+      draft.frontendSelectedSkill = undefined;
+      draft.systemsSelectedSkill = undefined;
     }));
   }
 
@@ -108,6 +116,8 @@ export class SkillsState {
     if (currentState.systemsSelectedSkill === undefined) {
       ctx.setState(produce(draft => {
         draft.systemsSelectedSkill = action.skill;
+        draft.frontendSelectedSkill = undefined;
+        draft.backendSelectedSkill = undefined;
       }));
       return;
     }
@@ -120,6 +130,8 @@ export class SkillsState {
 
     ctx.setState(produce(draft => {
       draft.systemsSelectedSkill = action.skill;
+      draft.frontendSelectedSkill = undefined;
+      draft.backendSelectedSkill = undefined;
     }));
   }
 }
