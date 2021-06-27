@@ -2,9 +2,7 @@ import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
 import produce from "immer";
 import {HttpClient} from "@angular/common/http";
-import {FormStatus} from "../../../models/src/lib/form-status.model";
-
-
+import {FormStatus} from "@hamza/site-ui/shared/models";
 
 export interface NewSubscriberForm {
   model: any;
