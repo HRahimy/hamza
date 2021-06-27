@@ -1,0 +1,33 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.span {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 24px;
+}
+
+.skillbox {
+  width: 36px;
+  height: 36px;
+  border-radius: 25%;
+  /*background-color: grey;*/
+  font-size: 22px;
+  display: flex;
+  margin-inline: 3px;
+  cursor: pointer;
+  object-fit: fill;
+}
+
+i {
+  margin: auto;
+}

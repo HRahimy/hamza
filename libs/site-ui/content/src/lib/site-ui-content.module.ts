@@ -7,6 +7,7 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatLineModule} from "@angular/material/core";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
+import {SkillsSimpleComponent} from './skills-simple/skills-simple.component';
 
 @NgModule({
   imports: [
@@ -19,10 +20,12 @@ import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
     SiteUiSharedUiModule
   ],
   declarations: [
-    SkillsComponent
+    SkillsComponent,
+    SkillsSimpleComponent
   ],
   exports: [
-    SkillsComponent
+    SkillsComponent,
+    SkillsSimpleComponent
   ]
 })
 export class SiteUiContentModule {

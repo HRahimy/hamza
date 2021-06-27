@@ -1,0 +1,32 @@
+<div class="flex">
+  <div class="row">
+    <h3>Frontend</h3>
+    <div class="span">
+      <div class="skillbox" *ngFor="let skill of frontendSkills()" >
+        <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
+        <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+      </div>
+    </div>
+  </div>
+  <mat-divider inset></mat-divider>
+  <div class="row">
+    <h3>Backend</h3>
+    <div class="span">
+      <div class="skillbox" *ngFor="let skill of backendSkills()" >
+        <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
+        <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+      </div>
+    </div>
+  </div>
+  <mat-divider inset></mat-divider>
+  <div class="row">
+    <h3>Systems</h3>
+    <div class="span">
+      <div class="skillbox" *ngFor="let skill of systemSkills()" >
+        <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
+        <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+      </div>
+    </div>
+  </div>
+  <mat-divider inset></mat-divider>
+</div>
