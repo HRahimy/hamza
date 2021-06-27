@@ -17,10 +17,6 @@ export class SelectFrontendSkill {
   }
 }
 
-export class DeselectFrontendSkill {
-  static readonly type = '[Skills] DeselectFrontendSkill';
-}
-
 export class SelectBackendSkill {
   static readonly type = '[Skills] SelectBackendSkill';
 
@@ -28,19 +24,11 @@ export class SelectBackendSkill {
   }
 }
 
-export class DeselectBackendSkill {
-  static readonly type = '[Skills] DeselectBackendSkill';
-}
-
 export class SelectSystemsSkill {
   static readonly type = '[Skills] SelectSystemsSkill';
 
   constructor(public skill: Skill) {
   }
-}
-
-export class DeselectSystemsSkill {
-  static readonly type = '[Skills] DeselectSystemsSkill';
 }
 
 @State<SkillsStateModel>({
@@ -58,10 +46,12 @@ export class SkillsState {
   static frontendSkills(state: SkillsStateModel): Skill[] {
     return state.skills.filter(value => value.skillType === 'frontend');
   }
+
   @Selector()
   static backendSkills(state: SkillsStateModel): Skill[] {
     return state.skills.filter(value => value.skillType === 'backend');
   }
+
   @Selector()
   static systemsSkills(state: SkillsStateModel): Skill[] {
     return state.skills.filter(value => value.skillType === 'systems');
@@ -69,43 +59,67 @@ export class SkillsState {
 
   @Action(SelectFrontendSkill)
   selectFrontendSkill(ctx: StateContext<SkillsStateModel>, action: SelectFrontendSkill) {
+    const currentState = ctx.getState();
+
+    if (currentState.frontendSelectedSkill === undefined) {
+      ctx.setState(produce(draft => {
+        draft.frontendSelectedSkill = action.skill;
+      }));
+      return;
+    }
+    if (currentState.frontendSelectedSkill.title === action.skill.title) {
+      ctx.setState(produce(draft => {
+        draft.frontendSelectedSkill = undefined;
+      }));
+      return;
+    }
+
     ctx.setState(produce(draft => {
       draft.frontendSelectedSkill = action.skill;
     }));
   }
 
-  @Action(DeselectFrontendSkill)
-  deselectFrontendSkill(ctx: StateContext<SkillsStateModel>, action: DeselectFrontendSkill) {
-    ctx.setState(produce(draft => {
-      draft.frontendSelectedSkill = undefined;
-    }));
-  }
-
   @Action(SelectBackendSkill)
   selectBackendSkill(ctx: StateContext<SkillsStateModel>, action: SelectBackendSkill) {
+    const currentState = ctx.getState();
+
+    if (currentState.backendSelectedSkill === undefined) {
+      ctx.setState(produce(draft => {
+        draft.backendSelectedSkill = action.skill;
+      }));
+      return;
+    }
+    if (currentState.backendSelectedSkill.title === action.skill.title) {
+      ctx.setState(produce(draft => {
+        draft.backendSelectedSkill = undefined;
+      }));
+      return;
+    }
+
     ctx.setState(produce(draft => {
       draft.backendSelectedSkill = action.skill;
     }));
   }
 
-  @Action(DeselectBackendSkill)
-  deselectBackendSkill(ctx: StateContext<SkillsStateModel>, action: DeselectBackendSkill) {
-    ctx.setState(produce(draft => {
-      draft.backendSelectedSkill = undefined;
-    }));
-  }
-
   @Action(SelectSystemsSkill)
   selectSystemsSkill(ctx: StateContext<SkillsStateModel>, action: SelectSystemsSkill) {
+    const currentState = ctx.getState();
+
+    if (currentState.systemsSelectedSkill === undefined) {
+      ctx.setState(produce(draft => {
+        draft.systemsSelectedSkill = action.skill;
+      }));
+      return;
+    }
+    if (currentState.systemsSelectedSkill.title === action.skill.title) {
+      ctx.setState(produce(draft => {
+        draft.systemsSelectedSkill = undefined;
+      }));
+      return;
+    }
+
     ctx.setState(produce(draft => {
       draft.systemsSelectedSkill = action.skill;
-    }));
-  }
-
-  @Action(DeselectSystemsSkill)
-  deselectSystemsSkill(ctx: StateContext<SkillsStateModel>, action: DeselectSystemsSkill) {
-    ctx.setState(produce(draft => {
-      draft.systemsSelectedSkill = undefined;
     }));
   }
 }
