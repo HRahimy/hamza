@@ -1,0 +1,64 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+
+.header {
+  flex-shrink: 0;
+  flex-grow: 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-block: 5px;
+}
+
+.span {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-inline: 24px;
+}
+
+.skillbox {
+  width: 36px;
+  height: 36px;
+  border-radius: 25%;
+  /*background-color: grey;*/
+  font-size: 22px;
+  display: flex;
+  margin-inline: 3px;
+  cursor: pointer;
+  object-fit: fill;
+  border: 2px solid transparent;
+}
+
+.selected {
+  border-color: rgb(79, 195, 247);
+  background-color: rgba(51, 103, 214, 0.03);
+}
+
+i {
+  margin: auto;
+}
+
+.warning-column {
+  justify-content: center;
+}
+.warning-column>* {
+  margin-inline: 10px;
+}
+
+::ng-deep .mat-list-item-content {
+  padding-left: 35px !important;
+}
+
+.mat-divider {
+  padding-left: 10px;
+}

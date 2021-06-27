@@ -19,7 +19,7 @@ export class MailingSubscriberEntity {
 
   @Column('text', {
     unique: true,
-    nullable: false
+    nullable: false,
   })
   public email: string;
 }

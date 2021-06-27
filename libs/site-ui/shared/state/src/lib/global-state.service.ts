@@ -2,25 +2,7 @@ import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
 import produce from "immer";
 import {HttpClient} from "@angular/common/http";
-
-export type FormStatus =
-  'PURE'
-  | 'VALID'
-  | 'INVALID'
-  | 'SUBMISSION_IN_PROGRESS'
-  | 'SUBMISSION_STARTED'
-  | 'SUBMISSION_SUCCESS'
-  | 'SUBMISSION_FAILURE';
-
-export const FormStatus = {
-  Pure: 'PURE' as FormStatus,
-  Valid: 'VALID' as FormStatus,
-  Invalid: 'INVALID' as FormStatus,
-  SubmissionInProgress: 'SUBMISSION_IN_PROGRESS' as FormStatus,
-  SubmissionStarted: 'SUBMISSION_STARTED' as FormStatus,
-  SubmissionSuccess: 'SUBMISSION_SUCCESS' as FormStatus,
-  SubmissionFailure: 'SUBMISSION_FAILURE' as FormStatus
-};
+import {FormStatus} from "@hamza/site-ui/shared/models";
 
 export interface NewSubscriberForm {
   model: any;
@@ -42,6 +24,10 @@ const pureSubscriberForm = <NewSubscriberForm>{
 
 export class SubmitNewSubscriberForm {
   static readonly type = '[Global] SubmitNewSubscriberForm';
+}
+
+export class OpenNewSubscriberForm {
+  static readonly type = '[Global] OpenNewSubscriberForm';
 }
 
 @State<GlobalStateModel>({
@@ -87,5 +73,16 @@ export class GlobalState {
           draft.newSubscriberForm.status = FormStatus.SubmissionFailure;
         }));
       });
+  }
+
+  @Action(OpenNewSubscriberForm)
+  openNewSubscriberForm(ctx: StateContext<GlobalStateModel>) {
+    const currentState = ctx.getState();
+
+    if (currentState.newSubscriberForm.status === FormStatus.SubmissionSuccess) {
+      ctx.setState(produce(draft => {
+        draft.newSubscriberForm = pureSubscriberForm;
+      }));
+    }
   }
 }

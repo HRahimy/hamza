@@ -6,10 +6,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SiteUiLayoutModule} from "@hamza/site-ui/layout";
 import {NgxsModule} from "@ngxs/store";
-import {GlobalState} from "@hamza/site-ui/shared/state";
+import {GlobalState, SkillsState} from "@hamza/site-ui/shared/state";
 import {NgxsFormPluginModule} from "@ngxs/form-plugin";
-import {NgxsLoggerPluginModule} from "@ngxs/logger-plugin";
 import {environment} from "../environments/environment";
+import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,14 +19,15 @@ import {environment} from "../environments/environment";
     BrowserAnimationsModule,
     SiteUiLayoutModule,
     NgxsModule.forRoot([
-        GlobalState
+        GlobalState,
+        SkillsState
       ],
       {
         developmentMode: !environment.production
       }),
     NgxsFormPluginModule.forRoot(),
-    // NOTE: Always import logger plugin last
-    NgxsLoggerPluginModule.forRoot()
+    // NOTE: Always import dev tools plugin last
+    NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
