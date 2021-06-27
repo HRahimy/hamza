@@ -1717,6 +1717,13 @@
   dependencies:
     enhanced-resolve "5.7.0"
 
+"@ngxs/devtools-plugin@^3.7.2":
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.7.2.tgz#995424e5faf48df55a1b54b9e1b36ce9c47c1d52"
+  integrity sha512-kRuOx1GPXHHZZAeQMm1J1msTZxjgiAUY4NR7bzaQPn+UwSY2OgGEsd8driMM5YSTF1hOjcFHinaLCM1vmu8FmQ==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngxs/form-plugin@^3.7.2":
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/@ngxs/form-plugin/-/form-plugin-3.7.2.tgz#c9dc94f46f80f3c9f6f5e97e9070bea7535906fb"
