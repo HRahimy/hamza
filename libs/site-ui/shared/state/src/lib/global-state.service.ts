@@ -26,6 +26,10 @@ export class SubmitNewSubscriberForm {
   static readonly type = '[Global] SubmitNewSubscriberForm';
 }
 
+export class OpenNewSubscriberForm {
+  static readonly type = '[Global] OpenNewSubscriberForm';
+}
+
 @State<GlobalStateModel>({
   name: 'global',
   defaults: {
@@ -69,5 +73,16 @@ export class GlobalState {
           draft.newSubscriberForm.status = FormStatus.SubmissionFailure;
         }));
       });
+  }
+
+  @Action(OpenNewSubscriberForm)
+  openNewSubscriberForm(ctx: StateContext<GlobalStateModel>) {
+    const currentState = ctx.getState();
+
+    if (currentState.newSubscriberForm.status === FormStatus.SubmissionSuccess) {
+      ctx.setState(produce(draft => {
+        draft.newSubscriberForm = pureSubscriberForm;
+      }));
+    }
   }
 }

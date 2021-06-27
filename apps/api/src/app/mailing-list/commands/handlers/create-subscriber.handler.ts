@@ -2,7 +2,7 @@ import {CommandHandler, ICommandHandler} from "@nestjs/cqrs";
 import {CreateSubscriberCommand} from "../impl/create-subscriber.command";
 import {InjectRepository} from "@nestjs/typeorm";
 import {MailingSubscriberEntity} from "../../entities/mailing-subscriber.entity";
-import {Repository} from "typeorm";
+import {QueryFailedError, Repository} from "typeorm";
 import {MailingSubscriberModel} from "../../models/mailing-subscriber.model";
 import {InternalServerErrorException} from "@nestjs/common";
 
@@ -23,8 +23,9 @@ export class CreateSubscriberHandler implements ICommandHandler<CreateSubscriber
     };
 
     const createdSubscriber = await this.mailingSubscriberRepository.save(newSubscriber).catch((err) => {
+      // const queryError = err as QueryFailedError;
       throw new InternalServerErrorException(
-        `CreateSubscriberCommand(${command}) failed with error(${err})`
+        `That email is already subscribed.`
       );
     });
 
