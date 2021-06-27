@@ -8,11 +8,14 @@
 .row {
   display: flex;
   flex-direction: row;
+  margin-block: 5px;
 }
 
 .span {
   display: flex;
+  width: 100%;
   flex-direction: row;
+  flex-wrap: wrap;
   margin-inline: 24px;
 }
 
@@ -26,6 +29,12 @@
   margin-inline: 3px;
   cursor: pointer;
   object-fit: fill;
+  border: 2px solid transparent;
+}
+
+.selected {
+  border-color: rgb(79, 195, 247);
+  background-color: rgba(51, 103, 214, 0.03);
 }
 
 i {

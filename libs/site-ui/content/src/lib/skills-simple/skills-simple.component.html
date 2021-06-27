@@ -1,8 +1,10 @@
 <div class="flex">
-  <div class="row">
+  <div class="row" mat-line>
     <h3>Frontend</h3>
     <div class="span">
-      <div class="skillbox" *ngFor="let skill of frontendSkills()" >
+      <div *ngFor="let skill of (frontendSkills$ | async)"
+           [class]="skill.title === (skills$ | async)?.frontendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'"
+           (click)="selectFrontendSkill(skill)">
         <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
         <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
       </div>
@@ -12,7 +14,9 @@
   <div class="row">
     <h3>Backend</h3>
     <div class="span">
-      <div class="skillbox" *ngFor="let skill of backendSkills()" >
+      <div *ngFor="let skill of (backendSkills$ | async)"
+           (click)="selectBackendSkill(skill)"
+           [class]="skill.title === (skills$ | async)?.backendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
         <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
         <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
       </div>
@@ -22,7 +26,9 @@
   <div class="row">
     <h3>Systems</h3>
     <div class="span">
-      <div class="skillbox" *ngFor="let skill of systemSkills()" >
+      <div *ngFor="let skill of (systemsSkills$ | async)"
+           (click)="selectSystemsSkill(skill)"
+           [class]="skill.title === (skills$ | async)?.systemsSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
         <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
         <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
       </div>

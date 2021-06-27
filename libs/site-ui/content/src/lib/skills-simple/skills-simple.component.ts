@@ -1,5 +1,14 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import {Skill, skills} from "@hamza/site-ui/shared/models";
+import {Select, Store} from "@ngxs/store";
+import {
+  SelectBackendSkill,
+  SelectFrontendSkill,
+  SelectSystemsSkill,
+  SkillsState,
+  SkillsStateModel
+} from "@hamza/site-ui/shared/state";
+import {Observable} from "rxjs";
+import {Skill} from "@hamza/site-ui/shared/models";
 
 @Component({
   selector: 'hamza-skills-simple',
@@ -8,20 +17,23 @@ import {Skill, skills} from "@hamza/site-ui/shared/models";
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkillsSimpleComponent {
-  skills: Skill[] = [...skills];
+  @Select(SkillsState) skills$?: Observable<SkillsStateModel>;
+  @Select(SkillsState.frontendSkills) frontendSkills$?: Observable<Skill[]>;
+  @Select(SkillsState.backendSkills) backendSkills$?: Observable<Skill[]>;
+  @Select(SkillsState.systemsSkills) systemsSkills$?: Observable<Skill[]>;
 
-  constructor() {
+  constructor(private store: Store) {
   }
 
-  systemSkills(): Skill[] {
-    return this.skills.filter(value => value.skillType === 'systems');
+  selectFrontendSkill(skill: Skill) {
+    this.store.dispatch(new SelectFrontendSkill(skill));
   }
 
-  frontendSkills(): Skill[] {
-    return this.skills.filter(value => value.skillType === 'frontend');
+  selectBackendSkill(skill: Skill) {
+    this.store.dispatch(new SelectBackendSkill(skill));
   }
 
-  backendSkills(): Skill[] {
-    return this.skills.filter(value => value.skillType === 'backend');
+  selectSystemsSkill(skill: Skill) {
+    this.store.dispatch(new SelectSystemsSkill(skill));
   }
 }
