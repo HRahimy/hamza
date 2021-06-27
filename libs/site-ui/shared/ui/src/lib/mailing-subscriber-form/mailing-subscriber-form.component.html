@@ -1,11 +1,15 @@
-<form [formGroup]='newSubscriberForm' ngxsForm='global.newSubscriberForm' (ngSubmit)='onSubmit()' class='flex'>
+<form [formGroup]='newSubscriberForm'
+      ngxsForm='global.newSubscriberForm'
+      (ngSubmit)='onSubmit()'
+      *ngIf="($subscriberForm | async)?.status !== null"
+      class='flex'>
   <mat-spinner color='accent'
-               *ngIf='($subscriberForm | async).status === "SUBMISSION_IN_PROGRESS"'>
+               *ngIf='($subscriberForm | async)?.status === "SUBMISSION_IN_PROGRESS"'>
   </mat-spinner>
 
   <mat-form-field appearance='outline'
                   color='accent'
-                  *ngIf='($subscriberForm | async).status !== "SUBMISSION_IN_PROGRESS"'>
+                  *ngIf='($subscriberForm | async)?.status !== "SUBMISSION_IN_PROGRESS"'>
     <mat-label>Name</mat-label>
     <input matInput formControlName='name' required>
     <mat-error *ngIf="newSubscriberForm.controls.name.hasError('required')">Name is required</mat-error>
@@ -13,7 +17,7 @@
 
   <mat-form-field appearance='outline'
                   color='accent'
-                  *ngIf='($subscriberForm | async).status !== "SUBMISSION_IN_PROGRESS"'>
+                  *ngIf='($subscriberForm | async)?.status !== "SUBMISSION_IN_PROGRESS"'>
     <mat-label>Email</mat-label>
     <input matInput formControlName='email' required>
     <mat-error *ngIf="newSubscriberForm.controls.email.hasError('required')">Email is required</mat-error>
@@ -23,6 +27,6 @@
           class='centered-button'
           color='accent'
           type='submit'
-          *ngIf='($subscriberForm | async).status !== "SUBMISSION_IN_PROGRESS"'>Save
+          *ngIf='($subscriberForm | async)?.status !== "SUBMISSION_IN_PROGRESS"'>Save
   </button>
 </form>

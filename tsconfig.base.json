@@ -13,8 +13,8 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "strictNullChecks": false,
-    "strictPropertyInitialization": false,
+//    "strictNullChecks": false,
+//    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
       "@hamza/api-interfaces": ["libs/api-interfaces/src/index.ts"],
