@@ -2,25 +2,9 @@ import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {Injectable} from "@angular/core";
 import produce from "immer";
 import {HttpClient} from "@angular/common/http";
+import {FormStatus} from "../../../models/src/lib/form-status.model";
 
-export type FormStatus =
-  'PURE'
-  | 'VALID'
-  | 'INVALID'
-  | 'SUBMISSION_IN_PROGRESS'
-  | 'SUBMISSION_STARTED'
-  | 'SUBMISSION_SUCCESS'
-  | 'SUBMISSION_FAILURE';
 
-export const FormStatus = {
-  Pure: 'PURE' as FormStatus,
-  Valid: 'VALID' as FormStatus,
-  Invalid: 'INVALID' as FormStatus,
-  SubmissionInProgress: 'SUBMISSION_IN_PROGRESS' as FormStatus,
-  SubmissionStarted: 'SUBMISSION_STARTED' as FormStatus,
-  SubmissionSuccess: 'SUBMISSION_SUCCESS' as FormStatus,
-  SubmissionFailure: 'SUBMISSION_FAILURE' as FormStatus
-};
 
 export interface NewSubscriberForm {
   model: any;
