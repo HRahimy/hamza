@@ -39,14 +39,14 @@
   </div>
   <mat-divider></mat-divider>
 
-  <mat-toolbar
-    *ngIf="(selectedSkill$ | async) === undefined"
-    color="primary">
-    <mat-toolbar-row class="warning-column" mat-line>
-      <mat-icon color="accent">warning</mat-icon>
-      Select a skill to learn more
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <div
+    *ngIf="(selectedSkill$ | async) === undefined">
+    <span class="aligned-with-icon">
+      <mat-icon [inline]="true" style="display:inline;">info</mat-icon>
+      You can select a skill to learn more
+    </span>
+    <mat-divider></mat-divider>
+  </div>
 
   <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
     <mat-list-item>

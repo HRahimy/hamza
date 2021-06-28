@@ -59,6 +59,15 @@ i {
   padding-left: 35px !important;
 }
 
-.mat-divider {
-  padding-left: 10px;
+.aligned-with-icon{
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  /*margin-block: 12px;*/
+  padding-block: 15px;
+  background-color: rgba(79, 195, 247, 0.3);
+}
+
+.aligned-with-icon>* {
+  margin-inline: 5px;
 }
