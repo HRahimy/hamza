@@ -36,4 +36,7 @@ export class MailingSubscriptionComponent implements OnInit {
     }
   }
 
+  onClose() {
+  }
+
 }

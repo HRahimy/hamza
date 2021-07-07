@@ -10,6 +10,14 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgxsFormPluginModule} from "@ngxs/form-plugin";
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  {
+    path: '',
+    component: MailingSubscriptionComponent,
+  }
+];
 
 @NgModule({
   imports: [
@@ -23,6 +31,7 @@ import {NgxsFormPluginModule} from "@ngxs/form-plugin";
     MatButtonModule,
     ReactiveFormsModule,
     NgxsFormPluginModule,
+    RouterModule.forChild(routes),
   ],
   declarations: [
     MailingSubscriptionComponent,

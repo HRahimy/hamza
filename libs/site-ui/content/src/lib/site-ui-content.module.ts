@@ -8,6 +8,14 @@ import {MatLineModule} from "@angular/material/core";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
 import {SkillsSimpleComponent} from './skills-simple/skills-simple.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  {
+    path: '',
+    component: SkillsSimpleComponent,
+  }
+];
 
 @NgModule({
   imports: [
@@ -17,7 +25,8 @@ import {SkillsSimpleComponent} from './skills-simple/skills-simple.component';
     MatDividerModule,
     MatLineModule,
     MatToolbarModule,
-    SiteUiSharedUiModule
+    SiteUiSharedUiModule,
+    RouterModule.forChild(routes),
   ],
   declarations: [
     SkillsComponent,
