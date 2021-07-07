@@ -12,15 +12,17 @@
   flex-grow: 0;
   text-align: center;
   font-weight: bold;
+  padding-inline: 50px;
 }
 
 .content {
   flex-shrink: 1;
   flex-grow: 1;
   width: fit-content;
-  margin: auto;
+  height: 100%;
+  margin: 15px auto auto;
   position: relative;
-  overflow-y: auto;
+  padding-inline: 50px;
 }
 
 .footer {
