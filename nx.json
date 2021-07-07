@@ -35,6 +35,9 @@
     "site-ui-content": {
       "tags": []
     },
+    "site-ui-forms": {
+      "tags": []
+    },
     "site-ui-layout": {
       "tags": []
     },

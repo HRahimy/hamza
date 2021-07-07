@@ -212,6 +212,31 @@
         }
       }
     },
+    "site-ui-forms": {
+      "projectType": "library",
+      "root": "libs/site-ui/forms",
+      "sourceRoot": "libs/site-ui/forms/src",
+      "prefix": "hamza",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/site-ui/forms"],
+          "options": {
+            "jestConfig": "libs/site-ui/forms/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/site-ui/forms/src/**/*.ts",
+              "libs/site-ui/forms/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "site-ui-layout": {
       "projectType": "library",
       "root": "libs/site-ui/layout",

@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/site-ui/shared/models',
     '<rootDir>/libs/typeorm-column-transformers',
     '<rootDir>/libs/site-ui/shared/state',
+    '<rootDir>/libs/site-ui/forms',
   ],
 };
