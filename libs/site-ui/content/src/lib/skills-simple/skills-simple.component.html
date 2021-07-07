@@ -1,64 +1,70 @@
 <div class="flex">
   <div class="header">
-    <span mat-line >And here's what I can do for you</span>
+    <hamza-summary></hamza-summary>
+    <span mat-line>And here's what I can do for you</span>
   </div>
-  <div class="row" mat-line>
-    <h3>Frontend</h3>
-    <div class="span">
-      <div *ngFor="let skill of (frontendSkills$ | async)"
-           [class]="skill.title === (skills$ | async)?.frontendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'"
-           (click)="selectFrontendSkill(skill)">
-        <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
-        <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+  <div class="content">
+    <div class="row" mat-line>
+      <h3>Frontend</h3>
+      <div class="span">
+        <div *ngFor="let skill of (frontendSkills$ | async)"
+             [class]="skill.title === (skills$ | async)?.frontendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'"
+             (click)="selectFrontendSkill(skill)">
+          <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
+          <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+        </div>
       </div>
     </div>
-  </div>
-  <mat-divider inset></mat-divider>
-  <div class="row">
-    <h3>Backend</h3>
-    <div class="span">
-      <div *ngFor="let skill of (backendSkills$ | async)"
-           (click)="selectBackendSkill(skill)"
-           [class]="skill.title === (skills$ | async)?.backendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
-        <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
-        <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+    <mat-divider inset></mat-divider>
+    <div class="row">
+      <h3>Backend</h3>
+      <div class="span">
+        <div *ngFor="let skill of (backendSkills$ | async)"
+             (click)="selectBackendSkill(skill)"
+             [class]="skill.title === (skills$ | async)?.backendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
+          <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
+          <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+        </div>
       </div>
     </div>
-  </div>
-  <mat-divider inset></mat-divider>
-  <div class="row">
-    <h3>Systems</h3>
-    <div class="span">
-      <div *ngFor="let skill of (systemsSkills$ | async)"
-           (click)="selectSystemsSkill(skill)"
-           [class]="skill.title === (skills$ | async)?.systemsSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
-        <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
-        <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+    <mat-divider inset></mat-divider>
+    <div class="row">
+      <h3>Systems</h3>
+      <div class="span">
+        <div *ngFor="let skill of (systemsSkills$ | async)"
+             (click)="selectSystemsSkill(skill)"
+             [class]="skill.title === (skills$ | async)?.systemsSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
+          <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
+          <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
+        </div>
       </div>
     </div>
-  </div>
-  <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
 
-  <div
-    *ngIf="(selectedSkill$ | async) === undefined">
+    <div
+      *ngIf="(selectedSkill$ | async) === undefined">
     <span class="aligned-with-icon">
       <mat-icon [inline]="true" style="display:inline;">info</mat-icon>
       You can select a skill to learn more
     </span>
-    <mat-divider></mat-divider>
+      <mat-divider></mat-divider>
+    </div>
+
+    <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
+      <mat-list-item>
+        <i *ngIf="(selectedSkill$ | async)?.assetType === 'icon'" mat-list-icon
+           [class]="(selectedSkill$ | async)?.iconAsset"></i>
+        <img mat-list-icon *ngIf="(selectedSkill$ | async)?.assetType === 'image'" alt="image"
+             [src]="(selectedSkill$ | async)?.iconAsset">
+        <h3 mat-line>{{(selectedSkill$ | async)?.title}}</h3>
+        <p mat-line>{{(selectedSkill$ | async)?.description}}</p>
+        <mat-divider></mat-divider>
+
+      </mat-list-item>
+    </mat-list>
   </div>
 
-  <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
-    <mat-list-item>
-      <i *ngIf="(selectedSkill$ | async)?.assetType === 'icon'" mat-list-icon
-         [class]="(selectedSkill$ | async)?.iconAsset"></i>
-      <img mat-list-icon *ngIf="(selectedSkill$ | async)?.assetType === 'image'" alt="image"
-           [src]="(selectedSkill$ | async)?.iconAsset">
-      <h3 mat-line>{{(selectedSkill$ | async)?.title}}</h3>
-      <p mat-line>{{(selectedSkill$ | async)?.description}}</p>
-      <mat-divider ></mat-divider>
-
-    </mat-list-item>
-  </mat-list>
-
+  <div class="footer">
+    <hamza-footer></hamza-footer>
+  </div>
 </div>
