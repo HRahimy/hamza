@@ -38,7 +38,13 @@
           type='submit'
           *ngIf='($subscriberForm | async)?.status !== "SUBMISSION_IN_PROGRESS"'>Save
   </button>
-  <mat-spinner color='accent' class="flex"
+  <button mat-stroked-button
+          color='warn'
+          type="button"
+          (click)="onClose()"
+          *ngIf='($subscriberForm | async)?.status !== "SUBMISSION_IN_PROGRESS"'>Cancel
+  </button>
+  <mat-spinner color='accent'
                *ngIf='($subscriberForm | async)?.status === "SUBMISSION_IN_PROGRESS"'>
   </mat-spinner>
 </form>

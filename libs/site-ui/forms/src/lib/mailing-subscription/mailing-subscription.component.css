@@ -7,3 +7,11 @@
   margin: auto;
   padding-inline: 20px;
 }
+
+button {
+  margin-top: 20px;
+}
+
+mat-spinner {
+  margin-inline: auto;
+}

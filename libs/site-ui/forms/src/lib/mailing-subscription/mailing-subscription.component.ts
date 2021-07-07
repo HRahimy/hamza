@@ -8,6 +8,7 @@ import {
 } from "@hamza/site-ui/shared/state";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'hamza-mailing-subscription',
@@ -23,7 +24,7 @@ export class MailingSubscriptionComponent implements OnInit {
 
   @Select(GlobalState.newSubscriberForm) $subscriberForm?: Observable<NewSubscriberForm>;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -37,6 +38,7 @@ export class MailingSubscriptionComponent implements OnInit {
   }
 
   onClose() {
+    this.router.navigate(['/']);
   }
 
 }
