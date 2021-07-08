@@ -1,6 +1,20 @@
 .column {
-  justify-content: center;
+  justify-content: space-between;
 }
-.column>* {
-  margin-inline: 10px;
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: black;
+}
+
+/*.column>* {*/
+/*  !*margin-inline: 10px;*!*/
+/*}*/
+
+mat-divider {
+  box-shadow: black;
 }

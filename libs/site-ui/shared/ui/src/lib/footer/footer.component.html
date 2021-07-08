@@ -1,17 +1,19 @@
 <div>
   <mat-divider></mat-divider>
+  <div class="content">
+    <a mat-raised-button color="accent" href="mailto:rahimy.hamza@gmail.com">
+      <mat-icon>email</mat-icon>
+      Email
+    </a>
+    <button mat-raised-button color="accent" (click)="openDialog()">
+      <mat-icon>link</mat-icon>
+      Mailing list
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+<!--  <mat-toolbar color="primary">-->
+<!--    <mat-toolbar-row>-->
 
-  <mat-toolbar>
-    <mat-toolbar-row class="column">
-      <a mat-raised-button color="accent" href="mailto:rahimy.hamza@gmail.com">
-        <mat-icon>email</mat-icon>
-        Email
-      </a>
-      <button mat-raised-button color="accent" (click)="openDialog()">
-        <mat-icon>link</mat-icon>
-        Mailing list
-        <mat-icon>chevron_right</mat-icon>
-      </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
+<!--    </mat-toolbar-row>-->
+<!--  </mat-toolbar>-->
 </div>

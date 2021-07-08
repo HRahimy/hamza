@@ -9,6 +9,7 @@ import {
 } from "@hamza/site-ui/shared/state";
 import {Observable} from "rxjs";
 import {Skill} from "@hamza/site-ui/shared/models";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'hamza-skills-simple',
@@ -23,7 +24,7 @@ export class SkillsSimpleComponent {
   @Select(SkillsState.systemsSkills) systemsSkills$?: Observable<Skill[]>;
   @Select(SkillsState.selectedSkill) selectedSkill$?: Observable<Skill | undefined>;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private router: Router) {
   }
 
   selectFrontendSkill(skill: Skill) {
@@ -36,5 +37,9 @@ export class SkillsSimpleComponent {
 
   selectSystemsSkill(skill: Skill) {
     this.store.dispatch(new SelectSystemsSkill(skill));
+  }
+
+  openDialog(): void {
+    this.router.navigate(['/subscribe']);
   }
 }

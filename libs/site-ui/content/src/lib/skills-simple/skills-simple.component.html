@@ -1,9 +1,24 @@
 <div class="flex">
-  <div class="header">
-    <hamza-summary></hamza-summary>
-    <span mat-line>And here's what I can do for you</span>
-  </div>
   <div class="content">
+    <div class="aligned-with-icon-top">
+      <img class="avatar"
+           src="/assets/images/portrait.jpg"
+           alt="image">
+    </div>
+    <div class="row">
+      <h2 mat-line>Hamza Rahimy</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row">
+
+      <p mat-line>Software developer with a dream ⭐</p>
+    </div>
+    <!--    <mat-divider></mat-divider>-->
+    <!--    <div class="row">-->
+
+    <!--      <p mat-line>And here's what I can do for you</p>-->
+    <!--    </div>-->
+    <mat-divider></mat-divider>
     <div class="row" mat-line>
       <h3>Frontend</h3>
       <div class="span">
@@ -39,7 +54,6 @@
         </div>
       </div>
     </div>
-    <mat-divider></mat-divider>
 
     <div
       *ngIf="(selectedSkill$ | async) === undefined">
@@ -47,10 +61,10 @@
       <mat-icon [inline]="true" style="display:inline;">info</mat-icon>
       You can select a skill to learn more
     </span>
-      <mat-divider></mat-divider>
     </div>
 
     <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
+      <mat-divider></mat-divider>
       <mat-list-item>
         <i *ngIf="(selectedSkill$ | async)?.assetType === 'icon'" mat-list-icon
            [class]="(selectedSkill$ | async)?.iconAsset"></i>
@@ -60,11 +74,21 @@
         <p mat-line>{{(selectedSkill$ | async)?.description}}</p>
 
       </mat-list-item>
-      <mat-divider></mat-divider>
     </mat-list>
+    <div class="aligned-with-icon-spaced">
+<!--        <hamza-footer></hamza-footer>-->
+        <a mat-raised-button color="accent" href="mailto:rahimy.hamza@gmail.com">
+          <mat-icon>email</mat-icon>
+          Email
+        </a>
+        <button mat-raised-button color="accent" (click)="openDialog()">
+          <mat-icon>link</mat-icon>
+          Mailing list
+          <mat-icon>chevron_right</mat-icon>
+        </button>
+
+    </div>
   </div>
 
-  <div class="footer">
-    <hamza-footer></hamza-footer>
-  </div>
+
 </div>

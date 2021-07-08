@@ -9,6 +9,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
 import {SkillsSimpleComponent} from './skills-simple/skills-simple.component';
 import {RouterModule, Routes} from "@angular/router";
+import {MatButtonModule} from "@angular/material/button";
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     MatLineModule,
     MatToolbarModule,
     SiteUiSharedUiModule,
+    MatButtonModule,
     RouterModule.forChild(routes),
   ],
   declarations: [
