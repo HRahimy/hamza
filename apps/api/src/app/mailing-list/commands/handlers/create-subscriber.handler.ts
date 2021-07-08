@@ -2,7 +2,7 @@ import {CommandHandler, ICommandHandler} from "@nestjs/cqrs";
 import {CreateSubscriberCommand} from "../impl/create-subscriber.command";
 import {InjectRepository} from "@nestjs/typeorm";
 import {MailingSubscriberEntity} from "../../entities/mailing-subscriber.entity";
-import {QueryFailedError, Repository} from "typeorm";
+import {Repository} from "typeorm";
 import {MailingSubscriberModel} from "../../models/mailing-subscriber.model";
 import {InternalServerErrorException} from "@nestjs/common";
 

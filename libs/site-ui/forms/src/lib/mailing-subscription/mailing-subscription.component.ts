@@ -33,12 +33,12 @@ export class MailingSubscriptionComponent implements OnInit {
 
   onSubmit() {
     if (this.newSubscriberForm.valid) {
-      this.store.dispatch(new SubmitNewSubscriberForm()).toPromise();
+      this.store.dispatch(new SubmitNewSubscriberForm());
     }
   }
 
   onClose() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).catch();
   }
 
 }
