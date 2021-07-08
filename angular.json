@@ -8,12 +8,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -39,12 +43,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -60,7 +68,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api-interfaces/**/*.ts"
+            ]
           }
         }
       }
@@ -73,14 +83,19 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/site",
             "index": "apps/site/src/index.html",
             "main": "apps/site/src/main.ts",
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.app.json",
-            "assets": ["apps/site/src/favicon.ico", "apps/site/src/assets"],
+            "assets": [
+              "apps/site/src/favicon.ico",
+              "apps/site/src/assets"
+            ],
             "styles": [
               "apps/site/src/custom-theme.scss",
               "apps/site/src/styles.css",
@@ -153,7 +168,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/site"],
+          "outputs": [
+            "coverage/apps/site"
+          ],
           "options": {
             "jestConfig": "apps/site/jest.config.js",
             "passWithNoTests": true
@@ -182,7 +199,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/site-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/site-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -195,7 +214,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/content"],
+          "outputs": [
+            "coverage/libs/site-ui/content"
+          ],
           "options": {
             "jestConfig": "libs/site-ui/content/jest.config.js",
             "passWithNoTests": true
@@ -220,7 +241,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/forms"],
+          "outputs": [
+            "coverage/libs/site-ui/forms"
+          ],
           "options": {
             "jestConfig": "libs/site-ui/forms/jest.config.js",
             "passWithNoTests": true
@@ -245,7 +268,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/layout"],
+          "outputs": [
+            "coverage/libs/site-ui/layout"
+          ],
           "options": {
             "jestConfig": "libs/site-ui/layout/jest.config.js",
             "passWithNoTests": true
@@ -270,12 +295,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/site-ui/shared/models/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/site-ui/shared/models/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/shared/models"],
+          "outputs": [
+            "coverage/libs/site-ui/shared/models"
+          ],
           "options": {
             "jestConfig": "libs/site-ui/shared/models/jest.config.js",
             "passWithNoTests": true
@@ -291,12 +320,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/site-ui/shared/state/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/site-ui/shared/state/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/shared/state"],
+          "outputs": [
+            "coverage/libs/site-ui/shared/state"
+          ],
           "options": {
             "jestConfig": "libs/site-ui/shared/state/jest.config.js",
             "passWithNoTests": true
@@ -312,7 +345,9 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/shared/ui"],
+          "outputs": [
+            "coverage/libs/site-ui/shared/ui"
+          ],
           "options": {
             "jestConfig": "libs/site-ui/shared/ui/jest.config.js",
             "passWithNoTests": true
@@ -329,6 +364,133 @@
         }
       }
     },
+    "sportswear-app": {
+      "projectType": "application",
+      "root": "apps/sportswear-app",
+      "sourceRoot": "apps/sportswear-app/src",
+      "prefix": "hamza",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/sportswear-app",
+            "index": "apps/sportswear-app/src/index.html",
+            "main": "apps/sportswear-app/src/main.ts",
+            "polyfills": "apps/sportswear-app/src/polyfills.ts",
+            "tsConfig": "apps/sportswear-app/tsconfig.app.json",
+            "assets": [
+              "apps/sportswear-app/src/favicon.ico",
+              "apps/sportswear-app/src/assets"
+            ],
+            "styles": [
+              "apps/site/src/custom-theme.scss",
+              "apps/sportswear-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/sportswear-app/src/environments/environment.ts",
+                  "with": "apps/sportswear-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "sportswear-app:build:production"
+            },
+            "development": {
+              "browserTarget": "sportswear-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sportswear-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/sportswear-app/src/**/*.ts",
+              "apps/sportswear-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/sportswear-app"
+          ],
+          "options": {
+            "jestConfig": "apps/sportswear-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "sportswear-app-e2e": {
+      "root": "apps/sportswear-app-e2e",
+      "sourceRoot": "apps/sportswear-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/sportswear-app-e2e/cypress.json",
+            "tsConfig": "apps/sportswear-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "sportswear-app:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sportswear-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/sportswear-app-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
     "typeorm-column-transformers": {
       "root": "libs/typeorm-column-transformers",
       "sourceRoot": "libs/typeorm-column-transformers/src",
@@ -337,12 +499,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/typeorm-column-transformers/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/typeorm-column-transformers/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/typeorm-column-transformers"],
+          "outputs": [
+            "coverage/libs/typeorm-column-transformers"
+          ],
           "options": {
             "jestConfig": "libs/typeorm-column-transformers/jest.config.js",
             "passWithNoTests": true

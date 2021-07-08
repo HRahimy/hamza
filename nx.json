@@ -50,6 +50,13 @@
     "site-ui-shared-ui": {
       "tags": []
     },
+    "sportswear-app": {
+      "tags": []
+    },
+    "sportswear-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sportswear-app"]
+    },
     "typeorm-column-transformers": {
       "tags": []
     }

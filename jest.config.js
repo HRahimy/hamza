@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/typeorm-column-transformers',
     '<rootDir>/libs/site-ui/shared/state',
     '<rootDir>/libs/site-ui/forms',
+    '<rootDir>/apps/sportswear-app',
   ],
 };
