@@ -8,12 +8,6 @@ Source code for my official portfolio application that hosts:
 
 ## Setup
 
-- I generated this project using [Nx](https://nx.dev).
-- Monorepo that holds code (or references to the code) for all my projects here.
-- Single access point for all my apps.
-
-### Local setup
-
 1. [Install Node LTS version](https://nodejs.dev/)
 2. [Install Yarn globally](https://yarnpkg.com/getting-started/install)
    ```
@@ -31,14 +25,29 @@ Source code for my official portfolio application that hosts:
    ```
    ng config --global cli.packageManager yarn
    ```
-5. Build the app
+5. [Install docker](https://www.docker.com/)
+6. Enable Kubernetes on your docker installation. You can find the option from Docker settings.
+7. [Install Helm](https://helm.sh/docs/intro/install/)
+
+### Local setup
+
+1. Clone the repository to a desired location
+   ```
+   git clone https://github.com/HRahimy/hamza
+   cd hamza
+   ```
+1. Build the app
    ```
    nx build api --prod
    nx build site --prod
    ```
-
-6. If you haven't already, [install docker](https://www.docker.com/).
-7. Containerize the app
+2. Containerize the app
    ```
    docker build . --tag "hamzasite:latest"
    ```
+3. Start the app through the helm local chart
+   ```
+   cd charts/site-local
+   helm install hamzasite .
+   ```
+4. Use the app by going to `localhost`
