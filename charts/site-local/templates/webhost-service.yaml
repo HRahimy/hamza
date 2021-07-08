@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.namePrefix }}-webhost-service
+  namespace: {{ .Values.deploymentNamespace }}
+  labels:
+    app: {{ .Values.namePrefix }}-app
+spec:
+#  Reference for working loadbalancer solution https://stackoverflow.com/a/60111530/5472560
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3333
+  selector:
+    app: {{ .Values.namePrefix }}-app
+    tier: webhost
+  type: LoadBalancer

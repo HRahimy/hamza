@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.namePrefix }}-webhost
+  namespace: {{ .Values.deploymentNamespace }}
+  labels:
+    app: {{ .Values.namePrefix }}-app
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.namePrefix }}-app
+      tier: webhost
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.namePrefix }}-app
+        tier: webhost
+    spec:
+      containers:
+        - image: {{ .Values.imageRefUri }}
+          imagePullPolicy: Never
+          name: {{ template "webHost" . }}
+          ports:
+            - containerPort: 3333
+              protocol: TCP
+          env:
+            - name: DB_HOST
+              value: {{ template "dbHost" . }}
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-webhost-secrets
+                  key: dbName
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-webhost-secrets
+                  key: dbUser
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.namePrefix }}-webhost-secrets
+                  key: dbPassword
