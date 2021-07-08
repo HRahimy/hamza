@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {MailingSubscriberFormComponent} from "../mailing-subscriber-form/mailing-subscriber-form.component";
+import { Component, ViewEncapsulation } from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({

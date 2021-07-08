@@ -1,22 +1,32 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SkillsComponent} from './skills/skills.component';
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatLineModule} from "@angular/material/core";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {SiteUiSharedUiModule} from "@hamza/site-ui/shared/ui";
 import {SkillsSimpleComponent} from './skills-simple/skills-simple.component';
-import {RouterModule, Routes} from "@angular/router";
 import {MatButtonModule} from "@angular/material/button";
+import {FooterComponent} from "./footer/footer.component";
+import {SiteUiContentComponent} from './site-ui-content/site-ui-content.component';
+import {RouterModule, Routes} from "@angular/router";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
+import {NgxsFormPluginModule} from "@ngxs/form-plugin";
+import {MailingSubscriptionComponent} from "./mailing-subscription/mailing-subscription.component";
 
 const routes: Routes = [
   {
     path: '',
     component: SkillsSimpleComponent,
+  },
+  {
+    path: 'subscribe',
+    component: MailingSubscriptionComponent,
   }
-];
+]
 
 @NgModule({
   imports: [
@@ -26,17 +36,25 @@ const routes: Routes = [
     MatDividerModule,
     MatLineModule,
     MatToolbarModule,
-    SiteUiSharedUiModule,
     MatButtonModule,
-    RouterModule.forChild(routes),
+    RouterModule.forRoot(routes),
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    NgxsFormPluginModule,
   ],
   declarations: [
-    SkillsComponent,
-    SkillsSimpleComponent
+    SkillsSimpleComponent,
+    FooterComponent,
+    SiteUiContentComponent,
+    MailingSubscriptionComponent
   ],
   exports: [
-    SkillsComponent,
-    SkillsSimpleComponent
+    SkillsSimpleComponent,
+    FooterComponent,
+    SiteUiContentComponent,
+    MailingSubscriptionComponent
   ]
 })
 export class SiteUiContentModule {

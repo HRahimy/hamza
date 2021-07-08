@@ -17,13 +17,10 @@
     "paths": {
       "@hamza/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@hamza/site-ui/content": ["libs/site-ui/content/src/index.ts"],
-      "@hamza/site-ui/forms": ["libs/site-ui/forms/src/index.ts"],
-      "@hamza/site-ui/layout": ["libs/site-ui/layout/src/index.ts"],
       "@hamza/site-ui/shared/models": [
         "libs/site-ui/shared/models/src/index.ts"
       ],
       "@hamza/site-ui/shared/state": ["libs/site-ui/shared/state/src/index.ts"],
-      "@hamza/site-ui/shared/ui": ["libs/site-ui/shared/ui/src/index.ts"],
       "@hamza/typeorm-column-transformers": [
         "libs/typeorm-column-transformers/src/index.ts"
       ]

@@ -212,56 +212,6 @@
         }
       }
     },
-    "site-ui-forms": {
-      "projectType": "library",
-      "root": "libs/site-ui/forms",
-      "sourceRoot": "libs/site-ui/forms/src",
-      "prefix": "hamza",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/forms"],
-          "options": {
-            "jestConfig": "libs/site-ui/forms/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/site-ui/forms/src/**/*.ts",
-              "libs/site-ui/forms/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "site-ui-layout": {
-      "projectType": "library",
-      "root": "libs/site-ui/layout",
-      "sourceRoot": "libs/site-ui/layout/src",
-      "prefix": "hamza",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/layout"],
-          "options": {
-            "jestConfig": "libs/site-ui/layout/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/site-ui/layout/src/**/*.ts",
-              "libs/site-ui/layout/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "site-ui-shared-models": {
       "root": "libs/site-ui/shared/models",
       "sourceRoot": "libs/site-ui/shared/models/src",
@@ -300,31 +250,6 @@
           "options": {
             "jestConfig": "libs/site-ui/shared/state/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "site-ui-shared-ui": {
-      "projectType": "library",
-      "root": "libs/site-ui/shared/ui",
-      "sourceRoot": "libs/site-ui/shared/ui/src",
-      "prefix": "hamza",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/site-ui/shared/ui"],
-          "options": {
-            "jestConfig": "libs/site-ui/shared/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/site-ui/shared/ui/src/**/*.ts",
-              "libs/site-ui/shared/ui/src/**/*.html"
-            ]
           }
         }
       }
