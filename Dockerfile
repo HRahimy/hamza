@@ -10,5 +10,5 @@ ENV PORT=3333
 EXPOSE ${PORT}
 
 RUN yarn install --prod
-RUN yarn add reflect-metadata tslib rxjs @nestjs/platform-express pg
-CMD node ./main.js
+RUN yarn add reflect-metadata tslib rxjs hbs @nestjs/platform-express pg
+CMD node --trace-warnings --unhandled-rejections=strict ./main.js

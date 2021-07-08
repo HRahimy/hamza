@@ -29,6 +29,8 @@ export class CreateSubscriberHandler implements ICommandHandler<CreateSubscriber
       );
     });
 
+    console.log(JSON.stringify(createdSubscriber));
+
     return new MailingSubscriberModel(
       createdSubscriber.id,
       createdSubscriber.name,
