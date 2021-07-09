@@ -1,9 +1,11 @@
+import {SkillType} from "./skill.type";
+
 export interface Skill {
   iconAsset: string;
   assetType: 'icon' | 'image',
   title: string;
   description?: string;
-  skillType: 'backend' | 'frontend' | 'systems' | 'language';
+  skillType: SkillType;
 }
 
 export const skills: Skill[] = [

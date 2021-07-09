@@ -16,6 +16,7 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgxsFormPluginModule} from "@ngxs/form-plugin";
 import {MailingSubscriptionComponent} from "./mailing-subscription/mailing-subscription.component";
+import { SkillDetailComponent } from './skill-detail/skill-detail.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,8 @@ const routes: Routes = [
     SkillsSimpleComponent,
     FooterComponent,
     SiteUiContentComponent,
-    MailingSubscriptionComponent
+    MailingSubscriptionComponent,
+    SkillDetailComponent
   ],
   exports: [
     SkillsSimpleComponent,
