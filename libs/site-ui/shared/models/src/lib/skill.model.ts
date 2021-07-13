@@ -1,9 +1,13 @@
+import {SkillType} from "./skill.type";
+import {SkillDetailModel} from "./skill-detail.model";
+
 export interface Skill {
   iconAsset: string;
   assetType: 'icon' | 'image',
   title: string;
   description?: string;
-  skillType: 'backend' | 'frontend' | 'systems' | 'language';
+  skillType: SkillType;
+  skillDetail?: SkillDetailModel;
 }
 
 export const skills: Skill[] = [

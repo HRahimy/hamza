@@ -63,6 +63,11 @@
     </span>
     </div>
 
+<!--    <div  *ngIf="(selectedSkill$ | async) !== undefined && (selectedSkill$ | async).skillDetail !== undefined">-->
+<!--      <mat-divider></mat-divider>-->
+<!--      <hamza-skill-detail [skillDetail]="(selectedSkill$ | async)?.skillDetail"></hamza-skill-detail>-->
+<!--    </div>-->
+
     <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
       <mat-divider></mat-divider>
       <mat-list-item>
