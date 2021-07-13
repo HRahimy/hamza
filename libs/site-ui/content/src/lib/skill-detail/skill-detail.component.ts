@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
+import {SkillDetailModel} from "@hamza/site-ui/shared/models";
 
 @Component({
   selector: 'hamza-skill-detail',
@@ -6,11 +7,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./skill-detail.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class SkillDetailComponent implements OnInit {
+export class SkillDetailComponent {
+  @Input() skillDetail!: SkillDetailModel;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
 }
