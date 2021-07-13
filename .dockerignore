@@ -1,0 +1,7 @@
+node_modules
+dist
+tmp
+.vscode
+.github
+charts
+k8s-templates
