@@ -41,25 +41,12 @@
   width: 100%;
 }
 
-.row.button-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-}
-
-.row.button-row>* {
-  margin-inline: 20px;
-  width: 100%;
-  background-color: black;
-}
-
 .span {
   display: flex;
   width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-inline: 24px;
+  margin-left: 24px;
 }
 
 .skillbox {
@@ -84,52 +71,30 @@ i {
   margin: auto;
 }
 
-.warning-column {
-  justify-content: center;
-}
-
-.warning-column > * {
-  margin-inline: 10px;
-}
-
-::ng-deep .mat-list-item-content {
-  padding-left: 35px !important;
-}
-
-.aligned-with-icon {
+.warning-panel {
   display: flex;
   justify-content: center;
   font-weight: 500;
-  /*margin-block: 12px;*/
   padding-block: 15px;
   background-color: rgba(79, 195, 247, 0.3);
-  /*border-bottom: 2px solid grey;*/
   border-top: 2px solid grey;
-  /*cursor: pointer;*/
 }
 
-.aligned-with-icon-spaced {
+.buttons-panel {
   display: flex;
   justify-content: space-evenly;
   font-weight: 500;
-  /*margin-block: 12px;*/
   padding-block: 15px;
-  /*background-color: rgba(79, 195, 247, 0.3);*/
-  /*border-bottom: 2px solid grey;*/
   border-top: 2px solid grey;
-  /*cursor: pointer;*/
 }
 
-.aligned-with-icon-top {
+.avatar-panel {
   display: flex;
   justify-content: space-evenly;
   font-weight: 500;
-  /*margin-block: 12px;*/
   padding-block: 15px;
   background-color: rgba(79, 195, 247, 0.3);
   border-bottom: 2px solid grey;
-  /*border-top: 2px solid grey;*/
-  /*cursor: pointer;*/
 }
 
 .avatar {
