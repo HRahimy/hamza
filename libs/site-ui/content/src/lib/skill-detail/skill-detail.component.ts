@@ -8,7 +8,7 @@ import {SkillDetailModel} from "@hamza/site-ui/shared/models";
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkillDetailComponent {
-  @Input() skillDetail!: SkillDetailModel;
+  @Input() skillDetail?: SkillDetailModel;
 
   constructor() {
   }
