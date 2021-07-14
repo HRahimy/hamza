@@ -1,5 +1,4 @@
-.flex {
-  display: flex;
-  flex-direction: column;
-  width: content-box;
+.container {
+  max-width: fit-content;
+  padding-inline: 32px;
 }
