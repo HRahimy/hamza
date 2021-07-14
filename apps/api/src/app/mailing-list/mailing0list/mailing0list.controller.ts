@@ -15,8 +15,6 @@ export class Mailing0listController {
   @Post()
   @HttpCode(200)
   async createEmployee(@Body() command: CreateSubscriberCommand): Promise<MailingSubscriberModel> {
-    const final = await this.commandBus.execute(new CreateSubscriberCommand(command.name, command.email));
-    console.log(JSON.stringify(final));
-    return final;
+    return await this.commandBus.execute(new CreateSubscriberCommand(command.name, command.email));
   }
 }
