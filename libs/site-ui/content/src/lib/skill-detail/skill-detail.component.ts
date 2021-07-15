@@ -15,17 +15,12 @@ export class SkillDetailComponent {
   }
 
   onLoad(event: string) {
-    console.log('loading started');
     this.detailFileLoading = false;
   }
 
   onReady() {
     console.log('loading ended');
     this.detailFileLoading = true;
-  }
-
-  onError() {
-    console.log('error loading details');
   }
 
 }
