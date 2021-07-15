@@ -5,9 +5,7 @@ import produce from "immer";
 
 export interface SkillsStateModel {
   skills: Skill[],
-  frontendSelectedSkill?: Skill,
-  backendSelectedSkill?: Skill,
-  systemsSelectedSkill?: Skill,
+  selectedSkill?: Skill
 }
 
 export class SelectFrontendSkill {
@@ -57,43 +55,25 @@ export class SkillsState {
     return state.skills.filter(value => value.skillType === 'systems');
   }
 
-  @Selector()
-  static selectedSkill(state: SkillsStateModel): Skill | undefined {
-    if (state.systemsSelectedSkill !== undefined) {
-      return state.systemsSelectedSkill;
-    }
-    if (state.frontendSelectedSkill !== undefined) {
-      return state.frontendSelectedSkill;
-    }
-    if (state.backendSelectedSkill !== undefined) {
-      return state.backendSelectedSkill;
-    }
-    return undefined;
-  }
-
   @Action(SelectFrontendSkill)
   selectFrontendSkill(ctx: StateContext<SkillsStateModel>, action: SelectFrontendSkill) {
     const currentState = ctx.getState();
 
-    if (currentState.frontendSelectedSkill === undefined) {
+    if (currentState.selectedSkill === undefined) {
       ctx.setState(produce(draft => {
-        draft.frontendSelectedSkill = action.skill;
-        draft.backendSelectedSkill = undefined;
-        draft.systemsSelectedSkill = undefined;
+        draft.selectedSkill = action.skill;
       }));
       return;
     }
-    if (currentState.frontendSelectedSkill.title === action.skill.title) {
+    if (currentState.selectedSkill.title === action.skill.title) {
       ctx.setState(produce(draft => {
-        draft.frontendSelectedSkill = undefined;
+        draft.selectedSkill = undefined;
       }));
       return;
     }
 
     ctx.setState(produce(draft => {
-      draft.frontendSelectedSkill = action.skill;
-      draft.backendSelectedSkill = undefined;
-      draft.systemsSelectedSkill = undefined;
+      draft.selectedSkill = action.skill;
     }));
   }
 
@@ -101,25 +81,21 @@ export class SkillsState {
   selectBackendSkill(ctx: StateContext<SkillsStateModel>, action: SelectBackendSkill) {
     const currentState = ctx.getState();
 
-    if (currentState.backendSelectedSkill === undefined) {
+    if (currentState.selectedSkill === undefined) {
       ctx.setState(produce(draft => {
-        draft.backendSelectedSkill = action.skill;
-        draft.frontendSelectedSkill = undefined;
-        draft.systemsSelectedSkill = undefined;
+        draft.selectedSkill = action.skill;
       }));
       return;
     }
-    if (currentState.backendSelectedSkill.title === action.skill.title) {
+    if (currentState.selectedSkill.title === action.skill.title) {
       ctx.setState(produce(draft => {
-        draft.backendSelectedSkill = undefined;
+        draft.selectedSkill = undefined;
       }));
       return;
     }
 
     ctx.setState(produce(draft => {
-      draft.backendSelectedSkill = action.skill;
-      draft.frontendSelectedSkill = undefined;
-      draft.systemsSelectedSkill = undefined;
+      draft.selectedSkill = action.skill;
     }));
   }
 
@@ -127,25 +103,21 @@ export class SkillsState {
   selectSystemsSkill(ctx: StateContext<SkillsStateModel>, action: SelectSystemsSkill) {
     const currentState = ctx.getState();
 
-    if (currentState.systemsSelectedSkill === undefined) {
+    if (currentState.selectedSkill === undefined) {
       ctx.setState(produce(draft => {
-        draft.systemsSelectedSkill = action.skill;
-        draft.frontendSelectedSkill = undefined;
-        draft.backendSelectedSkill = undefined;
+        draft.selectedSkill = action.skill;
       }));
       return;
     }
-    if (currentState.systemsSelectedSkill.title === action.skill.title) {
+    if (currentState.selectedSkill.title === action.skill.title) {
       ctx.setState(produce(draft => {
-        draft.systemsSelectedSkill = undefined;
+        draft.selectedSkill = undefined;
       }));
       return;
     }
 
     ctx.setState(produce(draft => {
-      draft.systemsSelectedSkill = action.skill;
-      draft.frontendSelectedSkill = undefined;
-      draft.backendSelectedSkill = undefined;
+      draft.selectedSkill = action.skill;
     }));
   }
 }

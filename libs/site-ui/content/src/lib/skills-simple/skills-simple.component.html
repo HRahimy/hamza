@@ -22,7 +22,7 @@
       <h3>Frontend</h3>
       <div class="span">
         <div *ngFor="let skill of (frontendSkills$ | async)"
-             [class]="skill.title === (skills$ | async)?.frontendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'"
+             [class]="skill.title === (skills$ | async)?.selectedSkill?.title ? 'skillbox selected' : 'skillbox'"
              (click)="selectFrontendSkill(skill)">
           <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
           <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
@@ -35,7 +35,7 @@
       <div class="span">
         <div *ngFor="let skill of (backendSkills$ | async)"
              (click)="selectBackendSkill(skill)"
-             [class]="skill.title === (skills$ | async)?.backendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
+             [class]="skill.title === (skills$ | async)?.selectedSkill?.title ? 'skillbox selected' : 'skillbox'">
           <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
           <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
         </div>
@@ -47,7 +47,7 @@
       <div class="span">
         <div *ngFor="let skill of (systemsSkills$ | async)"
              (click)="selectSystemsSkill(skill)"
-             [class]="skill.title === (skills$ | async)?.systemsSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
+             [class]="skill.title === (skills$ | async)?.selectedSkill?.title ? 'skillbox selected' : 'skillbox'">
           <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
           <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
         </div>
@@ -55,16 +55,16 @@
     </div>
 
     <div
-      *ngIf="(selectedSkill$ | async) === undefined">
+      *ngIf="(skills$ | async)?.selectedSkill === undefined">
     <span class="warning-panel">
       <mat-icon [inline]="true" style="display:inline;">info</mat-icon>
       You can select a skill to learn more
     </span>
     </div>
 
-    <div *ngIf="(selectedSkill$ | async) !== undefined && (selectedSkill$ | async)?.skillDetail !== undefined">
+    <div *ngIf="(skills$ | async)?.selectedSkill !== undefined && (skills$ | async)?.selectedSkill?.skillDetail !== undefined">
       <mat-divider></mat-divider>
-      <hamza-skill-detail [skillDetail]="(selectedSkill$ | async)?.skillDetail"></hamza-skill-detail>
+      <hamza-skill-detail [skillDetail]="(skills$ | async)?.selectedSkill?.skillDetail"></hamza-skill-detail>
     </div>
 
     <div class="buttons-panel">
