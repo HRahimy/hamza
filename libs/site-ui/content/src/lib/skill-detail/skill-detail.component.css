@@ -1,4 +1,5 @@
 .container {
   max-width: fit-content;
   padding-inline: 32px;
+  padding-block: 10px;
 }

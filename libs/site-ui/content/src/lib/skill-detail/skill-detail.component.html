@@ -1,5 +1,4 @@
 <div class="container">
-  <h1>{{skillDetail?.title}}</h1>
-  <p>{{skillDetail?.description}}</p>
+  <div *ngIf="skillDetail?.markdownPath !== undefined" markdown [src]="skillDetail?.markdownPath"></div>
 </div>
 

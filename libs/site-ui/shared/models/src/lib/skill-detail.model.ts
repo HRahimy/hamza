@@ -10,4 +10,5 @@ export interface SkillDetailModel {
   title: string,
   description: string,
   repos: Repo[],
+  markdownPath?: string,
 }

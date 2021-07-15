@@ -22,6 +22,7 @@ export const skills: Skill[] = [
       description: "Single-page web application development framework. This website is actually developed using Angular. See here to learn more",
       repos: [],
       type: "frontend",
+      markdownPath: "assets/markdown/angular-skill.md"
     },
   },
   {
