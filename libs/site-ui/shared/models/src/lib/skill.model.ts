@@ -24,7 +24,7 @@ export const skills: Skill[] = [
     title: 'NestJS',
     description: 'A NodeJS-based backend framework',
     skillType: 'backend',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/nestjs-skill.md",
   },
   {
     iconAsset: 'devicon-flutter-plain colored',
