@@ -19,7 +19,6 @@ export class SkillDetailComponent {
   }
 
   onReady() {
-    console.log('loading ended');
     this.detailFileLoading = true;
   }
 
