@@ -32,7 +32,7 @@ export const skills: Skill[] = [
     title: 'Flutter',
     description: 'A cross-platform mobile-app development framework',
     skillType: 'frontend',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/flutter-skill.md",
   },
   {
     iconAsset: 'devicon-dotnetcore-plain colored',
