@@ -1,5 +1,4 @@
 import {SkillType} from "./skill.type";
-import {SkillDetailModel} from "./skill-detail.model";
 
 export interface Skill {
   iconAsset: string;
@@ -7,7 +6,7 @@ export interface Skill {
   title: string;
   description?: string;
   skillType: SkillType;
-  skillDetail: SkillDetailModel;
+  skillDetailMarkdownPath?: string;
 }
 
 export const skills: Skill[] = [
@@ -17,13 +16,7 @@ export const skills: Skill[] = [
     title: 'Angular',
     description: 'Single-page web application development framework',
     skillType: 'frontend',
-    skillDetail: {
-      title: "Angular",
-      description: "Single-page web application development framework. This website is actually developed using Angular. See here to learn more",
-      repos: [],
-      type: "frontend",
-      markdownPath: "assets/markdown/angular-skill.md"
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-nestjs-plain colored',
@@ -31,12 +24,7 @@ export const skills: Skill[] = [
     title: 'NestJS',
     description: 'A NodeJS-based backend framework',
     skillType: 'backend',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-flutter-plain colored',
@@ -44,12 +32,7 @@ export const skills: Skill[] = [
     title: 'Flutter',
     description: 'A cross-platform mobile-app development framework',
     skillType: 'frontend',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-dotnetcore-plain colored',
@@ -57,12 +40,7 @@ export const skills: Skill[] = [
     title: 'ASP.NET Core',
     description: 'For building cross-platform backend & frontend applications',
     skillType: 'backend',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-postgresql-plain colored',
@@ -70,12 +48,7 @@ export const skills: Skill[] = [
     title: 'PostgreSQL',
     description: 'SQL Database',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Apache-cassandra-icon.png',
@@ -83,12 +56,7 @@ export const skills: Skill[] = [
     title: 'Cassandra',
     description: 'Highly scalable distributed No-SQL database',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-firebase-plain colored',
@@ -96,12 +64,7 @@ export const skills: Skill[] = [
     title: 'Firebase',
     description: 'Cloud infrastructure to get your apps up and running fast',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-googlecloud-plain colored',
@@ -109,12 +72,7 @@ export const skills: Skill[] = [
     title: 'Google Cloud Platform',
     description: 'For all your cloud hosting needs',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-amazonwebservices-original colored',
@@ -122,12 +80,7 @@ export const skills: Skill[] = [
     title: 'Amazon Web Services',
     description: 'For all your cloud hosting needs',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-docker-plain colored',
@@ -135,12 +88,7 @@ export const skills: Skill[] = [
     title: 'Docker',
     description: 'Containerizing your applications',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-kubernetes-plain colored',
@@ -148,12 +96,7 @@ export const skills: Skill[] = [
     title: 'Kubernetes',
     description: 'Application Hosting & Deployment Infrastructure',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-gitlab-plain colored',
@@ -161,12 +104,7 @@ export const skills: Skill[] = [
     title: 'GitLab',
     description: 'All-in-one SCM, Project Management, and CI/CD',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-github-original colored',
@@ -174,12 +112,7 @@ export const skills: Skill[] = [
     title: 'GitHub',
     description: 'SCM and CI/CD',
     skillType: 'systems',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-dart-plain colored',
@@ -187,12 +120,7 @@ export const skills: Skill[] = [
     title: 'Dart',
     description: 'Programming Language',
     skillType: 'language',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-typescript-plain colored',
@@ -200,12 +128,7 @@ export const skills: Skill[] = [
     title: 'TypeScript',
     description: 'Programming Language',
     skillType: 'language',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   },
   {
     iconAsset: 'devicon-csharp-plain colored',
@@ -213,11 +136,6 @@ export const skills: Skill[] = [
     title: 'C#',
     description: 'Programming Language',
     skillType: 'language',
-    skillDetail: {
-      description: "test",
-      title: "test",
-      repos: [],
-      type: "frontend",
-    },
+    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
   }
 ];

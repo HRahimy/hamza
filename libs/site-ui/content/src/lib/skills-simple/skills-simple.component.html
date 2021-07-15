@@ -62,9 +62,11 @@
     </span>
     </div>
 
-    <div *ngIf="(skills$ | async)?.selectedSkill !== undefined && (skills$ | async)?.selectedSkill?.skillDetail !== undefined">
+    <div
+      *ngIf="(skills$ | async)?.selectedSkill !== undefined && (skills$ | async)?.selectedSkill?.skillDetailMarkdownPath !== undefined">
       <mat-divider></mat-divider>
-      <hamza-skill-detail [skillDetail]="(skills$ | async)?.selectedSkill?.skillDetail"></hamza-skill-detail>
+      <hamza-skill-detail
+        [skillDetailMarkdownPath]="(skills$ | async)?.selectedSkill?.skillDetailMarkdownPath"></hamza-skill-detail>
     </div>
 
     <div class="buttons-panel">

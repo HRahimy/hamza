@@ -4,9 +4,9 @@
                *ngIf="detailFileLoading"
   ></mat-spinner>
 
-  <markdown *ngIf="skillDetail?.markdownPath !== undefined"
+  <markdown *ngIf="skillDetailMarkdownPath !== undefined"
             (load)="onLoad($event)"
             (ready)="onReady()"
-            [src]="skillDetail?.markdownPath"></markdown>
+            [src]="skillDetailMarkdownPath"></markdown>
 
 </div>
