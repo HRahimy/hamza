@@ -1,4 +1,13 @@
 <div class="container">
-  <div *ngIf="skillDetail?.markdownPath !== undefined" markdown [src]="skillDetail?.markdownPath"></div>
-</div>
 
+  <mat-spinner color="accent"
+               *ngIf="detailFileLoading"
+  ></mat-spinner>
+
+  <markdown *ngIf="skillDetail?.markdownPath !== undefined"
+            (load)="onLoad($event)"
+            (ready)="onReady()"
+            (error)="onError()"
+            [src]="skillDetail?.markdownPath"></markdown>
+
+</div>

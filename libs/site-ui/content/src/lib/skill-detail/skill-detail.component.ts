@@ -8,9 +8,24 @@ import {SkillDetailModel} from "@hamza/site-ui/shared/models";
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkillDetailComponent {
+  detailFileLoading = false;
   @Input() skillDetail?: SkillDetailModel;
 
   constructor() {
+  }
+
+  onLoad(event: string) {
+    console.log('loading started');
+    this.detailFileLoading = false;
+  }
+
+  onReady() {
+    console.log('loading ended');
+    this.detailFileLoading = true;
+  }
+
+  onError() {
+    console.log('error loading details');
   }
 
 }

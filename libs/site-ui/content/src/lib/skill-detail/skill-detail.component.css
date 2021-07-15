@@ -3,3 +3,8 @@
   padding-inline: 32px;
   padding-block: 10px;
 }
+
+mat-spinner {
+  margin-inline: auto;
+  padding-block: 10px;
+}
