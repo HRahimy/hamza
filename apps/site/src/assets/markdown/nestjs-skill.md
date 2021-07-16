@@ -8,3 +8,4 @@ Building, testing, and deployment to cloud or on-premise infrastructure automate
 
 - Backend (REST API) for this website. See source code [here](https://github.com/HRahimy/hamza).
 - Backend (REST API) for Positive Affirmations app on the Play Store [here](https://play.google.com/store/apps/details?id=com.positiveaffirmations.mobile_app). See source code [here](https://github.com/HRahimy/positive_affirmations).
+- Backend for proprietary ERP built for [Sera Tarım](http://www.seratarim.net/). For verification, please contact me.
