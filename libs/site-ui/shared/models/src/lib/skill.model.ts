@@ -40,7 +40,7 @@ export const skills: Skill[] = [
     title: 'ASP.NET Core',
     description: 'For building cross-platform backend & frontend applications',
     skillType: 'backend',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/aspnetcore-skill.md",
   },
   {
     iconAsset: 'devicon-postgresql-plain colored',
