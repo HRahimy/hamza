@@ -48,7 +48,7 @@ export const skills: Skill[] = [
     title: 'PostgreSQL',
     description: 'SQL Database',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/postgres-skill.md",
   },
   {
     iconAsset: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Apache-cassandra-icon.png',
