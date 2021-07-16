@@ -1,6 +1,6 @@
 <div class="flex">
   <div class="content">
-    <div class="aligned-with-icon-top">
+    <div class="avatar-panel">
       <img class="avatar"
            src="/assets/images/portrait.jpg"
            alt="image">
@@ -9,46 +9,41 @@
       <h2 mat-line>Hamza Rahimy</h2>
     </div>
     <mat-divider></mat-divider>
-    <div class="row">
-
-      <p mat-line>Software developer with a dream ⭐</p>
+    <div class="column">
+      <p mat-line>Full-stack software engineer ⭐</p>
+      <p mat-line>Making products out of ideas 💯</p>
     </div>
-    <!--    <mat-divider></mat-divider>-->
-    <!--    <div class="row">-->
-
-    <!--      <p mat-line>And here's what I can do for you</p>-->
-    <!--    </div>-->
     <mat-divider></mat-divider>
     <div class="row" mat-line>
       <h3>Frontend</h3>
       <div class="span">
         <div *ngFor="let skill of (frontendSkills$ | async)"
-             [class]="skill.title === (skills$ | async)?.frontendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'"
+             [class]="skill.title === (skills$ | async)?.selectedSkill?.title ? 'skillbox selected' : 'skillbox'"
              (click)="selectFrontendSkill(skill)">
           <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
           <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
         </div>
       </div>
     </div>
-    <mat-divider inset></mat-divider>
+    <mat-divider></mat-divider>
     <div class="row">
       <h3>Backend</h3>
       <div class="span">
         <div *ngFor="let skill of (backendSkills$ | async)"
              (click)="selectBackendSkill(skill)"
-             [class]="skill.title === (skills$ | async)?.backendSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
+             [class]="skill.title === (skills$ | async)?.selectedSkill?.title ? 'skillbox selected' : 'skillbox'">
           <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
           <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
         </div>
       </div>
     </div>
-    <mat-divider inset></mat-divider>
+    <mat-divider></mat-divider>
     <div class="row">
       <h3>Systems</h3>
       <div class="span">
         <div *ngFor="let skill of (systemsSkills$ | async)"
              (click)="selectSystemsSkill(skill)"
-             [class]="skill.title === (skills$ | async)?.systemsSelectedSkill?.title ? 'skillbox selected' : 'skillbox'">
+             [class]="skill.title === (skills$ | async)?.selectedSkill?.title ? 'skillbox selected' : 'skillbox'">
           <i *ngIf="skill.assetType === 'icon'" [class]="skill.iconAsset"></i>
           <img *ngIf="skill.assetType === 'image'" [src]="skill.iconAsset" alt="image">
         </div>
@@ -56,44 +51,31 @@
     </div>
 
     <div
-      *ngIf="(selectedSkill$ | async) === undefined">
-    <span class="aligned-with-icon">
+      *ngIf="(skills$ | async)?.selectedSkill === undefined">
+    <span class="warning-panel">
       <mat-icon [inline]="true" style="display:inline;">info</mat-icon>
       You can select a skill to learn more
     </span>
     </div>
 
-<!--    <div  *ngIf="(selectedSkill$ | async) !== undefined && (selectedSkill$ | async).skillDetail !== undefined">-->
-<!--      <mat-divider></mat-divider>-->
-<!--      <hamza-skill-detail [skillDetail]="(selectedSkill$ | async)?.skillDetail"></hamza-skill-detail>-->
-<!--    </div>-->
-
-    <mat-list *ngIf="(selectedSkill$ | async) !== undefined">
+    <div
+      *ngIf="(skills$ | async)?.selectedSkill !== undefined && (skills$ | async)?.selectedSkill?.skillDetailMarkdownPath !== undefined">
       <mat-divider></mat-divider>
-      <mat-list-item>
-        <i *ngIf="(selectedSkill$ | async)?.assetType === 'icon'" mat-list-icon
-           [class]="(selectedSkill$ | async)?.iconAsset"></i>
-        <img mat-list-icon *ngIf="(selectedSkill$ | async)?.assetType === 'image'" alt="image"
-             [src]="(selectedSkill$ | async)?.iconAsset">
-        <h3 mat-line>{{(selectedSkill$ | async)?.title}}</h3>
-        <p mat-line>{{(selectedSkill$ | async)?.description}}</p>
+      <hamza-skill-detail
+        [skillDetailMarkdownPath]="(skills$ | async)?.selectedSkill?.skillDetailMarkdownPath"></hamza-skill-detail>
+    </div>
 
-      </mat-list-item>
-    </mat-list>
-    <div class="aligned-with-icon-spaced">
-<!--        <hamza-footer></hamza-footer>-->
-        <a mat-raised-button color="accent" href="mailto:rahimy.hamza@gmail.com">
-          <mat-icon>email</mat-icon>
-          Email
-        </a>
-        <button mat-raised-button color="accent" (click)="openDialog()">
-          <mat-icon>link</mat-icon>
-          Mailing list
-          <mat-icon>chevron_right</mat-icon>
-        </button>
-
+    <div class="buttons-panel">
+      <a mat-raised-button color="accent" href="mailto:rahimy.hamza@gmail.com">
+        <mat-icon>email</mat-icon>
+        Email
+      </a>
+      <button mat-raised-button color="accent" (click)="openDialog()">
+        <mat-icon>link</mat-icon>
+        Mailing list
+        <mat-icon>chevron_right</mat-icon>
+      </button>
     </div>
   </div>
-
 
 </div>

@@ -22,7 +22,6 @@ export class SkillsSimpleComponent {
   @Select(SkillsState.frontendSkills) frontendSkills$?: Observable<Skill[]>;
   @Select(SkillsState.backendSkills) backendSkills$?: Observable<Skill[]>;
   @Select(SkillsState.systemsSkills) systemsSkills$?: Observable<Skill[]>;
-  @Select(SkillsState.selectedSkill) selectedSkill$?: Observable<Skill | undefined>;
 
   constructor(private store: Store, private router: Router) {
   }

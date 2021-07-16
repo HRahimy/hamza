@@ -16,7 +16,8 @@ import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
 import {NgxsFormPluginModule} from "@ngxs/form-plugin";
 import {MailingSubscriptionComponent} from "./mailing-subscription/mailing-subscription.component";
-import { SkillDetailComponent } from './skill-detail/skill-detail.component';
+import {SkillDetailComponent} from './skill-detail/skill-detail.component';
+import {MarkdownModule} from "ngx-markdown";
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
     MatInputModule,
     ReactiveFormsModule,
     NgxsFormPluginModule,
+    MarkdownModule.forRoot(),
   ],
   declarations: [
     SkillsSimpleComponent,

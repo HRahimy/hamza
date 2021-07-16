@@ -1,1 +1,12 @@
-<p>skill-detail works!</p>
+<div class="container">
+
+  <mat-spinner color="accent"
+               *ngIf="detailFileLoading"
+  ></mat-spinner>
+
+  <markdown *ngIf="skillDetailMarkdownPath !== undefined"
+            (load)="onLoad($event)"
+            (ready)="onReady()"
+            [src]="skillDetailMarkdownPath"></markdown>
+
+</div>

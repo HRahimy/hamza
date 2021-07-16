@@ -1,5 +1,4 @@
 import {Component, Input, ViewEncapsulation} from '@angular/core';
-import {SkillDetailModel} from "@hamza/site-ui/shared/models";
 
 @Component({
   selector: 'hamza-skill-detail',
@@ -8,9 +7,18 @@ import {SkillDetailModel} from "@hamza/site-ui/shared/models";
   encapsulation: ViewEncapsulation.Emulated
 })
 export class SkillDetailComponent {
-  @Input() skillDetail!: SkillDetailModel;
+  detailFileLoading = false;
+  @Input() skillDetailMarkdownPath?: string;
 
   constructor() {
+  }
+
+  onLoad(event: string) {
+    this.detailFileLoading = false;
+  }
+
+  onReady() {
+    this.detailFileLoading = true;
   }
 
 }
