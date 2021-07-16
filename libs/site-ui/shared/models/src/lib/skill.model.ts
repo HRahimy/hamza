@@ -74,14 +74,14 @@ export const skills: Skill[] = [
     skillType: 'systems',
     skillDetailMarkdownPath: "assets/markdown/gcp-skill.md",
   },
-  {
-    iconAsset: 'devicon-amazonwebservices-original colored',
-    assetType: 'icon',
-    title: 'Amazon Web Services',
-    description: 'For all your cloud hosting needs',
-    skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
-  },
+  // {
+  //   iconAsset: 'devicon-amazonwebservices-original colored',
+  //   assetType: 'icon',
+  //   title: 'Amazon Web Services',
+  //   description: 'For all your cloud hosting needs',
+  //   skillType: 'systems',
+  //   skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+  // },
   {
     iconAsset: 'devicon-docker-plain colored',
     assetType: 'icon',
