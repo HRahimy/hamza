@@ -96,7 +96,7 @@ export const skills: Skill[] = [
     title: 'Kubernetes',
     description: 'Application Hosting & Deployment Infrastructure',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/kubernetes-skill.md",
   },
   {
     iconAsset: 'devicon-gitlab-plain colored',
