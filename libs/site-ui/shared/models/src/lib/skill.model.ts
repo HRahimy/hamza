@@ -56,7 +56,7 @@ export const skills: Skill[] = [
     title: 'Cassandra',
     description: 'Highly scalable distributed No-SQL database',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/cassandra-skill.md",
   },
   {
     iconAsset: 'devicon-firebase-plain colored',
