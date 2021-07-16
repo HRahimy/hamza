@@ -1,6 +1,6 @@
-## Description
+## [Flutter](https://flutter.dev/)
 
-[Flutter](https://flutter.dev/) - My framework of choice to build modern cross-platform mobile apps. You can deploy these apps to Play Store (for Android) and App Store (for iOS).
+My framework of choice to build modern cross-platform mobile apps. You can deploy these apps to Play Store (for Android) and App Store (for iOS).
 
 I follow a test-driven standard for building Flutter apps. I.e, I write (failing) tests first, then I implement functionality based on the tests.
 

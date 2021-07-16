@@ -1,6 +1,6 @@
-## Description
+## [Angular](https://angular.io/)
 
-[Angular](https://angular.io/) - My framework of choice for building modern, beautiful, and maintainable web apps. You can build and deploy these web apps in any cloud or on-premise infrastructure for your users to access.
+My framework of choice for building modern, beautiful, and maintainable web apps. You can build and deploy these web apps in any cloud or on-premise infrastructure for your users to access.
 
 Of course, I can also take care of the build and deploy stages.
 

@@ -1,6 +1,6 @@
-## Description
+## [NestJS](https://nestjs.com/)
 
-[NestJS](https://nestjs.com/) - My framework of choice for building server-side applications.
+My framework of choice for building server-side applications.
 
 Building, testing, and deployment automated via CI/CD tools like GitLab or GitHub Actions.
 
