@@ -104,7 +104,7 @@ export const skills: Skill[] = [
     title: 'GitLab',
     description: 'All-in-one SCM, Project Management, and CI/CD',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/gitlab-skill.md",
   },
   {
     iconAsset: 'devicon-github-original colored',
