@@ -64,7 +64,7 @@ export const skills: Skill[] = [
     title: 'Firebase',
     description: 'Cloud infrastructure to get your apps up and running fast',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/firebase-skill.md",
   },
   {
     iconAsset: 'devicon-googlecloud-plain colored',
@@ -72,7 +72,7 @@ export const skills: Skill[] = [
     title: 'Google Cloud Platform',
     description: 'For all your cloud hosting needs',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/gcp-skill.md",
   },
   {
     iconAsset: 'devicon-amazonwebservices-original colored',
