@@ -112,7 +112,7 @@ export const skills: Skill[] = [
     title: 'GitHub',
     description: 'SCM and CI/CD',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/github-skill.md",
   },
   {
     iconAsset: 'devicon-dart-plain colored',
