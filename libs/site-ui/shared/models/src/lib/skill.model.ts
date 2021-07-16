@@ -88,7 +88,7 @@ export const skills: Skill[] = [
     title: 'Docker',
     description: 'Containerizing your applications',
     skillType: 'systems',
-    skillDetailMarkdownPath: "assets/markdown/angular-skill.md",
+    skillDetailMarkdownPath: "assets/markdown/docker-skill.md",
   },
   {
     iconAsset: 'devicon-kubernetes-plain colored',
